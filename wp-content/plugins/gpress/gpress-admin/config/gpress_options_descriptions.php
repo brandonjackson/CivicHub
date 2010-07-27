@@ -1,0 +1,14 @@
+<?php
+$module_control_intro = __('These options allow you to turn on (or) off the various gPress modules...', 'gpress');
+$gtagged_posts_intro = __('These options allow you to fine-tune the geo-tagged post functionality...', 'gpress');
+$excerpt_settings_intro = __('This allows you to control the way excerpts are handled on the homepage of your theme. Some themes strip-out HTML tags with the excerpts, or use full-content instead - so these options provide fine-grain control over these components...', 'gpress');
+$map_settings_intro = __('These options allow you to control the rendered maps...', 'gpress');
+$marker_settings_intro = __('These options allow you to set new default markers...', 'gpress');
+$loop_settings_intro = __('<p>All options from the Advanced Settings tab are only visible to Super Admins.</p><p>These allow you to add or remove the places shown on the homepage by controlling the post types querried. If loops start acting strange, please switch to "POSTS ONLY", which removes the the filters...</p><p>Please note that some plugins are unable to handle post_type arrays, and only work when querrying one type, such as either posts or places...</p>', 'gpress');
+$brand_settings_intro = __('<p>All options from the Advanced Settings tab are only visible to Super Admins.</p><p>Although it is hugely appreciate if you provide some form of shout-back or recognition for gPress, we understand that some situations require re-branding, and do not want you to edit core files, so use these options instead:</p>', 'gpress');
+$credits_intro = __('<p>All options from the Advanced Settings tab are only visible to Super Admins.</p><p>These options allow you to remove our credits from the front-end...</p><p>Although it is hugely appreciate if you provide some form of shout-back or recognition for gPress, we understand that some situations require re-branding, and do not want you to edit core files, so use these options instead:</p>', 'gpress');
+$misc_intro = __('Other MISC advanced settings can be found here, such as the removal of jQuery from your theme, emergency deactivation of Foursquare, and so forth...', 'gpress');
+$foursquare_intro = __('These options allow you to integrate with Foursquare...', 'gpress');
+$bpcomp_intro = __('These options allow you to control the BuddyPress integration...', 'gpress');
+$lang_ling_intro = __('<p>In the future, these options will allow you to easily switch languages, but for now, as an example of the flexibility we are adding into our language system, you can change all references of "places" into "venues"</p><p><strong>HOWEVER</strong>, please note that after switching language and clicking "SAVE CHANGES", you will need to refresh the page once again to ensure everything gets flushed and refreshed properly...</p>', 'gpress');
+?>

@@ -1,0 +1,9 @@
+
+.tpp_form_container .custom-checkbox input, .tpp_form_container .custom-radio input{
+	margin-left:-4px !important;	
+	margin-top:-4px !important;		
+}
+
+.tpp_form_container .custom-checkbox, .tpp_form_container .custom-radio { 
+	width:100%
+}

@@ -1,0 +1,49 @@
+.tpp_form_container h1 {
+	font-size: 25px;
+}
+
+.tpp_form_container h2 {
+	font-size: 23px;
+}
+
+.tpp_form_container h3 {
+	font-size: 21px;
+}
+
+.tpp_form_container h4 {
+	font-size: 19px;
+}
+
+.tpp_form_container h5 {
+	font-size: 17px;
+}
+
+.tpp_form_container h6 {
+	font-size: 15px;
+}
+
+.tpp_form_container ol {
+	list-style: decimal;
+}
+
+.tpp_form_container ul {
+	list-style: disc;
+}
+
+.tpp_form_container p,
+.tpp_form_container dl,
+.tpp_form_container hr,
+.tpp_form_container h1,
+.tpp_form_container h2,
+.tpp_form_container h3,
+.tpp_form_container h4,
+.tpp_form_container h5,
+.tpp_form_container h6,
+.tpp_form_container ol,
+.tpp_form_container ul,
+.tpp_form_container pre,
+.tpp_form_container table,
+.tpp_form_container address,
+.tpp_form_container fieldset {
+	margin-bottom: 20px;
+}
