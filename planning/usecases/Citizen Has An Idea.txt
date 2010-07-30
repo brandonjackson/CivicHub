@@ -1,0 +1,23 @@
+Citizen Has An Idea
+==============
+
+Checks to see if already exists
+	[Citizen Finds An Idea]
+Clicks submit new idea link
+Fills out form
+	What is the name of your idea?
+	What is your idea?
+	What is your goal?
+	Why does it matter?
+	Are there any groups already involved?
+	What resources will it take to make this happen?
+	What kind of people need to be involved?
+	Where will this happen?
+		Select from list of neighborhoods
+Submits form
+
+Citizen Finds An Idea
+================
+
+Search by Topic or Search by Role
+Risking fo
