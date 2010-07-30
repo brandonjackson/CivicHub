@@ -38,7 +38,7 @@
 	<body <?php body_class() ?> id="bp-default">
 
 		<?php do_action( 'bp_before_header' ) ?>
-
+		<div id="header_wrapper">
 		<div id="header">
 
 			<h1 id="logo">
@@ -107,7 +107,7 @@
 			<?php do_action( 'bp_header' ) ?>
 
 		</div><!-- #header -->
-
+		</div><!-- #header_wrapper-->
 		<?php do_action( 'bp_after_header' ) ?>
 		<?php do_action( 'bp_before_container' ) ?>
 

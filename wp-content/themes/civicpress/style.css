@@ -97,27 +97,23 @@ img.avatar {
 /* > Header
 -------------------------------------------------------------- */
 
-#header {
+#header_wrapper {
 	position: relative;
-	color: #fff;
+	color: #FFF;
 	background: url( assets/images/default_header.jpg);
-	-moz-border-radius-bottomleft: 6px;
-	-webkit-border-bottom-left-radius: 6px;
-	-moz-border-radius-bottomright: 6px;
-	-webkit-border-bottom-right-radius: 6px;
 	margin-bottom: 20px;
-	height: 100px;
 	padding-top: 25px;
 }
+#header{
+	width: 960px;
+	margin: 0 auto;
+}
 #header #search-bar {
-	position: absolute;
-	top: 25px;
-	right: 0;
-	width: 100%;
+	margin-top: -10px;
 	text-align: right;
 }
 #header h1 {
-	line-height: 230%;
+
 }
 #header #search-bar .padder {
 	padding: 10px 20px;
@@ -135,13 +131,6 @@ img.avatar {
 	padding: 1px 4px;
 	margin-left: 4px;
 }
-#header h1 {
-	position: absolute;
-	bottom: 0;
-	left: 20px;
-	width: 44%;
-	margin: 0 0 -5px 0;
-}
 #header h1 a {
 	color: #fff;
 	font-size: 26px;
@@ -152,12 +141,7 @@ img.avatar {
 
 ul#nav {
 	margin: 0;
-	padding: 0;
-	position: absolute;
-	right: 15px;
 	list-style: none;
-	bottom: 0;
-	max-width: 65%;
 }
 ul#nav li {
 	float: left;
