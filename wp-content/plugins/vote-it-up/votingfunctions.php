@@ -488,6 +488,16 @@ echo '<span style="color:#00CC00">+'.get_option('voteiu_initialoffset').'</span>
 } else {
 echo '<span style="color:#CC0000">'.get_option('voteiu_initialoffset').'</span>';
 } } ?>)</td>
+<?php
+
+/*
+	echo $postdat->post_title;
+	echo ' - ';
+	echo $a[1][$i][0];
+	echo '<br />';
+*/
+
+?>
 </tr>
 <?php
 	}
