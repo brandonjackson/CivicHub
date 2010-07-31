@@ -40,10 +40,14 @@
 		<?php do_action( 'bp_before_header' ) ?>
 		<div id="header_wrapper">
 		<div id="header">
-
+			<a id="logo" href="<?php echo site_url() ?>" title="<?php _e( 'Home', 'buddypress' ) ?>">
+			<img src="<?php echo site_url(); ?>/wp-content/themes/civicpress/assets/images/civichaven.png" />
+			</a>
+			<!--
 			<h1 id="logo">
-				<a href="<?php echo site_url() ?>" title="<?php _e( 'Home', 'buddypress' ) ?>"><?php bp_site_name() ?></a></h1>
+				<a href="<?php echo site_url() ?>" title="<?php _e( 'Home', 'buddypress' ) ?>"><?php bp_site_name() ?></a></h1>-->
 			<?php wp_nav_menu('menu=nav&menu_id=nav'); ?>
+			
 			<!--
 			Old BuddyPress Menu System
 			<ul id="nav">
