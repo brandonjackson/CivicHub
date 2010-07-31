@@ -1642,3 +1642,14 @@ div.comment-options {
 #footer a {
 	color: #bbb;
 }
+
+.post_votes{
+	float: left;
+}
+
+.tickercontainer{
+	width: 150px;
+}
+.tickertext{
+	width: 150px;
+}

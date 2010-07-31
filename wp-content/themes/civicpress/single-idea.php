@@ -17,15 +17,14 @@
 				</div>
 
 				<div class="post" id="post-<?php the_ID(); ?>">
-					<?php DisplayVotes(get_the_ID()); ?>
-					<div class="author-box">
-						<?php echo get_avatar( get_the_author_meta( 'user_email' ), '50' ); ?>
-						<p><?php printf( __( 'by %s', 'buddypress' ), bp_core_get_userlink( $post->post_author ) ) ?></p>
+					<div class='post_votes'>
+						<?php DisplayVotes(get_the_ID()); ?>
 					</div>
 
 					<div class="post-content">
 						<h2 class="posttitle"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permanent Link to', 'buddypress' ) ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-
+						<p>						<?php echo get_avatar( get_the_author_meta( 'user_email' ), '30' ); ?>
+</p>
 						<p class="date"><?php the_time() ?> <em><?php _e( 'in', 'buddypress' ) ?> <?php the_category(', ') ?> <?php printf( __( 'by %s', 'buddypress' ), bp_core_get_userlink( $post->post_author ) ) ?></em></p>
 
 						<div class="entry">
