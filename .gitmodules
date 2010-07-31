@@ -1,3 +1,3 @@
 [submodule "ballot-box"]
 	path = wp-content/plugins/ballot-box
-	url = git@github.com:brandonjackson/ballot-box.git
+	url = git://github.com:brandonjackson/ballot-box.git
