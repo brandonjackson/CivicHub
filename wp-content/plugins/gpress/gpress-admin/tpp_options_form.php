@@ -32,7 +32,7 @@ do_action('tppo_before_form');
 		if(!jQuery)
 			document.write('<sc'+'ript type="text/javascript" src="<?php echo TPPO_URL; ?>/js/jquery.js"></scri'+'pt>');
 	</script>
-	<script type="text/javascript" src="<?php echo TPPO_URL; ?>/js/ui.js"></script>
+	<script type="text/javascript" src="<?php echo TPPO_URL; ?>/js/ui-customised.js"></script>
 	<script type="text/javascript" src="<?php echo TPPO_URL; ?>/js/inputs.js"></script>
 	<script type="text/javascript" src="<?php echo TPPO_URL; ?>/js/selects.js"></script>
 	<script type="text/javascript"> 
@@ -86,7 +86,7 @@ do_action('tppo_before_form');
 					<?php
 					if(empty($tppoptions_top_tabs))
 						echo '<li style="width:100%; text-align:center; margin:-12px 0 13px 0;"><a href="#" style="width:100%">
-						THEME OPTIONS LOADED - WAITING FOR CONFIGURATION
+						THESE OPTIONS ARE ONLY AVAILABLE TO SUPER ADMINS
 						</li>';
 						
 					foreach ($tppoptions_top_tabs as $this_top_tab_name => $this_top_tab) {

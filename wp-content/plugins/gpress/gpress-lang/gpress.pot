@@ -1,121 +1,123 @@
-# Translation of the WordPress plugin gPress 0.2.4 by PressBuddies.
-# Copyright (C) 2010 PressBuddies
-# This file is distributed under the same license as the gPress package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: gPress 0.2.4\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tag/gpress\n"
-"POT-Creation-Date: 2010-07-25 07:50+0000\n"
-"PO-Revision-Date: 2010-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Project-Id-Version: gPress 0.2.3.2\n"
+"POT-Creation-Date: 2010-07-17 10:35+0800\n"
+"PO-Revision-Date: 2010-08-01 10:43+0800\n"
+"Last-Translator: Mark Smalley <mark@smalley.my>\n"
+"Language-Team: PressBuddies\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
+"X-Poedit-Basepath: /wp-content/plugins/gpress/\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED KINGDOM\n"
+"X-Poedit-SourceCharset: utf-8\n"
 
-#: gpress-admin/config/gpress_options.php:49
+#: gpress-admin/config/gpress_options.php:80
+#: gpress-admin/config/gpress_options.php:88
 msgid "gPress Components"
 msgstr ""
 
-#: gpress-admin/config/gpress_options.php:50
+#: gpress-admin/config/gpress_options.php:81
+#: gpress-admin/config/gpress_options.php:89
 msgid "General Settings"
 msgstr ""
 
-#: gpress-admin/config/gpress_options.php:52
-#: gpress-admin/config/gpress_options.php:54
+#: gpress-admin/config/gpress_options.php:82
+#: gpress-admin/config/gpress_options.php:91
+#: gpress-admin/config/gpress_options.php:93
 #: gpress-core/meta/meta-sidebar-content.php:22
 #: gpress-core/widgets/widgets-fav-place.php:152
 #: gpress-core/widgets/widgets-foursquare.php:323
 msgid "Advanced Settings"
 msgstr ""
 
-#: gpress-admin/config/gpress_options.php:56
+#: gpress-admin/config/gpress_options.php:83
+#: gpress-admin/config/gpress_options.php:95
 msgid "Social-Media"
 msgstr ""
 
-#: gpress-admin/config/gpress_options.php:58
-#: gpress-admin/config/gpress_options.php:60
+#: gpress-admin/config/gpress_options.php:84
+#: gpress-admin/config/gpress_options.php:97
+#: gpress-admin/config/gpress_options.php:99
 msgid "BuddyPress"
 msgstr ""
 
-#: gpress-admin/config/gpress_options.php:64
+#: gpress-admin/config/gpress_options.php:105
 msgid "Module Control"
 msgstr ""
 
-#: gpress-admin/config/gpress_options.php:66
-#: gpress-admin/config/gpress_options.php:68
+#: gpress-admin/config/gpress_options.php:107
+#: gpress-admin/config/gpress_options.php:109
 #: gpress-admin/config/gpress_options_fields.php:7
 msgid "Geo-Tagged Posts"
 msgstr ""
 
-#: gpress-admin/config/gpress_options.php:70
+#: gpress-admin/config/gpress_options.php:111
 msgid "Map Settings"
 msgstr ""
 
-#: gpress-admin/config/gpress_options.php:71
+#: gpress-admin/config/gpress_options.php:112
 msgid "Marker Settings"
 msgstr ""
 
-#: gpress-admin/config/gpress_options.php:74
-#: gpress-admin/config/gpress_options.php:81
+#: gpress-admin/config/gpress_options.php:115
+#: gpress-admin/config/gpress_options.php:123
 msgid "Loop Settings"
 msgstr ""
 
-#: gpress-admin/config/gpress_options.php:75
-#: gpress-admin/config/gpress_options.php:82
+#: gpress-admin/config/gpress_options.php:116
+#: gpress-admin/config/gpress_options.php:124
 msgid "Excerpt Settings"
 msgstr ""
 
-#: gpress-admin/config/gpress_options.php:76
-#: gpress-admin/config/gpress_options.php:83
+#: gpress-admin/config/gpress_options.php:117
+#: gpress-admin/config/gpress_options.php:125
 msgid "Brand Settings"
 msgstr ""
 
-#: gpress-admin/config/gpress_options.php:77
-#: gpress-admin/config/gpress_options.php:84
+#: gpress-admin/config/gpress_options.php:118
+#: gpress-admin/config/gpress_options.php:126
 msgid "Credits"
 msgstr ""
 
-#: gpress-admin/config/gpress_options.php:78
-#: gpress-admin/config/gpress_options.php:85
+#: gpress-admin/config/gpress_options.php:119
+#: gpress-admin/config/gpress_options.php:127
 msgid "MISC Settings"
 msgstr ""
 
-#: gpress-admin/config/gpress_options.php:79
-#: gpress-admin/config/gpress_options.php:86
+#: gpress-admin/config/gpress_options.php:120
+#: gpress-admin/config/gpress_options.php:128
 msgid "Language / Lingo"
 msgstr ""
 
-#: gpress-admin/config/gpress_options.php:89
-#: gpress-admin/config/gpress_options.php:91
+#: gpress-admin/config/gpress_options.php:121
+#: gpress-admin/config/gpress_options.php:129
+msgid "Sitewide Options"
+msgstr ""
+
+#: gpress-admin/config/gpress_options.php:132
+#: gpress-admin/config/gpress_options.php:134
 #: gpress-core/widgets/widgets-foursquare.php:32
 msgid "Foursquare"
 msgstr ""
 
-#: gpress-admin/config/gpress_options.php:94
-#: gpress-admin/config/gpress_options.php:96
+#: gpress-admin/config/gpress_options.php:137
+#: gpress-admin/config/gpress_options.php:139
 msgid "BP Components"
 msgstr ""
 
 #: gpress-admin/config/gpress_options_descriptions.php:2
-msgid ""
-"These options allow you to turn on (or) off the various gPress modules..."
+msgid "These options allow you to turn on (or) off the various gPress modules..."
 msgstr ""
 
 #: gpress-admin/config/gpress_options_descriptions.php:3
-msgid ""
-"These options allow you to fine-tune the geo-tagged post functionality..."
+msgid "These options allow you to fine-tune the geo-tagged post functionality..."
 msgstr ""
 
 #: gpress-admin/config/gpress_options_descriptions.php:4
-msgid ""
-"This allows you to control the way excerpts are handled on the homepage of "
-"your theme. Some themes strip-out HTML tags with the excerpts, or use full-"
-"content instead - so these options provide fine-grain control over these "
-"components..."
+msgid "This allows you to control the way excerpts are handled on the homepage of your theme. Some themes strip-out HTML tags with the excerpts, or use full-content instead - so these options provide fine-grain control over these components..."
 msgstr ""
 
 #: gpress-admin/config/gpress_options_descriptions.php:5
@@ -127,56 +129,35 @@ msgid "These options allow you to set new default markers..."
 msgstr ""
 
 #: gpress-admin/config/gpress_options_descriptions.php:7
-msgid ""
-"<p>All options from the Advanced Settings tab are only visible to Super "
-"Admins.</p><p>These allow you to add or remove the places shown on the "
-"homepage by controlling the post types querried. If loops start acting "
-"strange, please switch to \"POSTS ONLY\", which removes the the filters...</"
-"p><p>Please note that some plugins are unable to handle post_type arrays, "
-"and only work when querrying one type, such as either posts or places...</p>"
+msgid "<p>All options from the Advanced Settings tab are only visible to Super Admins.</p><p>These allow you to add or remove the places shown on the homepage by controlling the post types querried. If loops start acting strange, please switch to \"POSTS ONLY\", which removes the the filters...</p><p>Please note that some plugins are unable to handle post_type arrays, and only work when querrying one type, such as either posts or places...</p>"
 msgstr ""
 
 #: gpress-admin/config/gpress_options_descriptions.php:8
-msgid ""
-"<p>All options from the Advanced Settings tab are only visible to Super "
-"Admins.</p><p>Although it is hugely appreciate if you provide some form of "
-"shout-back or recognition for gPress, we understand that some situations "
-"require re-branding, and do not want you to edit core files, so use these "
-"options instead:</p>"
+msgid "All other options from the gPress options are based on individual Blog IDs, and allow each blog to set-up their own indepedent options, whereas these Sitewide Options are applied to the entire network and can overwrite the individual settings where selected..."
 msgstr ""
 
 #: gpress-admin/config/gpress_options_descriptions.php:9
-msgid ""
-"<p>All options from the Advanced Settings tab are only visible to Super "
-"Admins.</p><p>These options allow you to remove our credits from the front-"
-"end...</p><p>Although it is hugely appreciate if you provide some form of "
-"shout-back or recognition for gPress, we understand that some situations "
-"require re-branding, and do not want you to edit core files, so use these "
-"options instead:</p>"
+msgid "<p>All options from the Advanced Settings tab are only visible to Super Admins.</p><p>Although it is hugely appreciate if you provide some form of shout-back or recognition for gPress, we understand that some situations require re-branding, and do not want you to edit core files, so use these options instead:</p>"
 msgstr ""
 
 #: gpress-admin/config/gpress_options_descriptions.php:10
-msgid ""
-"Other MISC advanced settings can be found here, such as the removal of "
-"jQuery from your theme, emergency deactivation of Foursquare, and so forth..."
+msgid "<p>All options from the Advanced Settings tab are only visible to Super Admins.</p><p>These options allow you to remove our credits from the front-end...</p><p>Although it is hugely appreciate if you provide some form of shout-back or recognition for gPress, we understand that some situations require re-branding, and do not want you to edit core files, so use these options instead:</p>"
 msgstr ""
 
 #: gpress-admin/config/gpress_options_descriptions.php:11
-msgid "These options allow you to integrate with Foursquare..."
+msgid "Other MISC advanced settings can be found here, such as the removal of jQuery from your theme, emergency deactivation of Foursquare, and so forth..."
 msgstr ""
 
 #: gpress-admin/config/gpress_options_descriptions.php:12
-msgid "These options allow you to control the BuddyPress integration..."
+msgid "These options allow you to integrate with Foursquare..."
 msgstr ""
 
 #: gpress-admin/config/gpress_options_descriptions.php:13
-msgid ""
-"<p>In the future, these options will allow you to easily switch languages, "
-"but for now, as an example of the flexibility we are adding into our "
-"language system, you can change all references of \"places\" into \"venues"
-"\"</p><p><strong>HOWEVER</strong>, please note that after switching language "
-"and clicking \"SAVE CHANGES\", you will need to refresh the page once again "
-"to ensure everything gets flushed and refreshed properly...</p>"
+msgid "These options allow you to control the BuddyPress integration..."
+msgstr ""
+
+#: gpress-admin/config/gpress_options_descriptions.php:14
+msgid "<p>In the future, these options will allow you to easily switch languages, but for now, as an example of the flexibility we are adding into our language system, you can change all references of \"places\" into \"venues\"</p><p><strong>HOWEVER</strong>, please note that after switching language and clicking \"SAVE CHANGES\", you will need to refresh the page once again to ensure everything gets flushed and refreshed properly...</p>"
 msgstr ""
 
 #: gpress-admin/config/gpress_options_fields.php:8
@@ -184,7 +165,7 @@ msgid "geoRSS"
 msgstr ""
 
 #: gpress-admin/config/gpress_options_fields.php:9
-#: gpress-core/gpress-post-types.php:10
+#: gpress-core/gpress-post-types.php:39
 msgid "Places"
 msgstr ""
 
@@ -254,12 +235,7 @@ msgid "Home Loop Method"
 msgstr ""
 
 #: gpress-admin/config/gpress_options_fields.php:25
-msgid ""
-"There are two methods for getting your homepage loop to accept the new "
-"custom post types, we can either inject a query_posts into the header or "
-"directly manipulate the query with the pre_get_posts method. Unofrtunately, "
-"neither are perfect and both have problems with other plugins or themes that "
-"also use these methods, so we have provided you with the choice..."
+msgid "There are two methods for getting your homepage loop to accept the new custom post types, we can either inject a query_posts into the header or directly manipulate the query with the pre_get_posts method. Unofrtunately, neither are perfect and both have problems with other plugins or themes that also use these methods, so we have provided you with the choice..."
 msgstr ""
 
 #: gpress-admin/config/gpress_options_fields.php:27
@@ -315,9 +291,7 @@ msgid "Use jQuery 1.4.2 in Theme"
 msgstr ""
 
 #: gpress-admin/config/gpress_options_fields.php:39
-msgid ""
-"In emergencies, you may want to remove the gPress jQuery 1.4.2 from your "
-"theme"
+msgid "In emergencies, you may want to remove the gPress jQuery 1.4.2 from your theme"
 msgstr ""
 
 #: gpress-admin/config/gpress_options_fields.php:40
@@ -325,11 +299,7 @@ msgid "Deactivate Foursquare"
 msgstr ""
 
 #: gpress-admin/config/gpress_options_fields.php:40
-msgid ""
-"The Foursquare oAuth processs has several requirements not all servers "
-"support, and failure to connect, or when their API happens to be down means "
-"you cannot access your site. If this happens, use this feature to deactivate "
-"all Foursquare activity, then refresh this page..."
+msgid "The Foursquare oAuth processs has several requirements not all servers support, and failure to connect, or when their API happens to be down means you cannot access your site. If this happens, use this feature to deactivate all Foursquare activity, then refresh this page..."
 msgstr ""
 
 #: gpress-admin/config/gpress_options_fields.php:42
@@ -341,32 +311,46 @@ msgid "Name of custom MO "
 msgstr ""
 
 #: gpress-admin/config/gpress_options_fields.php:43
-msgid ""
-"This file should be located in \"gpress/gpress-lang\" such as \"gpress-"
-"default\", which is the default setting"
+msgid "This file should be located in \"gpress/gpress-lang\" such as \"gpress-default\", which is the default setting"
 msgstr ""
 
 #: gpress-admin/config/gpress_options_fields.php:45
-msgid "Foursquare Auth"
+msgid "Sitewide Post Control"
 msgstr ""
 
 #: gpress-admin/config/gpress_options_fields.php:46
-msgid "Foursquare Key"
+msgid "Sitewide Place Control"
 msgstr ""
 
 #: gpress-admin/config/gpress_options_fields.php:47
-msgid "Foursquare Secret"
+msgid "gPress Options Control"
 msgstr ""
 
-#: gpress-admin/config/gpress_options_fields.php:49
-msgid "Show User Locations<br />on BuddyPress Profiles"
+#: gpress-admin/config/gpress_options_fields.php:48
+msgid "gPress Places Control"
 msgstr ""
 
 #: gpress-admin/config/gpress_options_fields.php:50
-msgid "Show Closest Address<br />on User's Profile Page"
+msgid "Foursquare Auth"
 msgstr ""
 
 #: gpress-admin/config/gpress_options_fields.php:51
+msgid "Foursquare Key"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:52
+msgid "Foursquare Secret"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:54
+msgid "Show User Locations<br />on BuddyPress Profiles"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:55
+msgid "Show Closest Address<br />on User's Profile Page"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:56
 msgid "Show Geo-Tagged Posts on User's Activity Page"
 msgstr ""
 
@@ -464,6 +448,43 @@ msgstr ""
 msgid "USE THE CUSTOM FILE BELOW"
 msgstr ""
 
+#: gpress-admin/config/gpress_options_lists.php:47
+msgid "Each individual blog within this network can control its own gPress post features"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_lists.php:48
+msgid "The gPress post settings of \"Blog ID 1\" apply to all individual blogs within this network"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_lists.php:49
+msgid "\"Blog ID 1\" is the the only blog from the entrie network to utilise the gPress post features"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_lists.php:52
+msgid "Each individual blog within this network can control its own gPress place features"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_lists.php:53
+msgid "The gPress place settings of \"Blog ID 1\" apply to all individual blogs within this network"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_lists.php:54
+msgid "\"Blog ID 1\" is the the only blog from the entrie network to utilise the gPress place features"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_lists.php:57
+#: gpress-admin/config/gpress_options_lists.php:61
+msgid "DEFAULT - This attempts to show only what is needed to who needs it"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_lists.php:58
+msgid "HIDE OPTIONS - This will ensure that all gPress Options are only visible to Super Admins"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_lists.php:62
+msgid "HIDE PLACES - This will ensure that all gPress Place control is only visible to Super Admins"
+msgstr ""
+
 #: gpress-core/gpress-bp-functions.php:80
 msgid "Present Location:"
 msgstr ""
@@ -482,9 +503,7 @@ msgstr ""
 #: gpress-core/gpress-bp-functions.php:88
 #: gpress-core/gpress-bp-functions.php:218
 #, php-format
-msgid ""
-"If you would like to display your location here, you first need to goto your "
-"%s page and add your location."
+msgid "If you would like to display your location here, you first need to goto your %s page and add your location."
 msgstr ""
 
 #: gpress-core/gpress-bp-functions.php:164
@@ -492,10 +511,7 @@ msgid "BuddyPress Geo Settings"
 msgstr ""
 
 #: gpress-core/gpress-bp-functions.php:175
-msgid ""
-"For now, the only option here is for setting your location as a user, which "
-"may then be used on your profile or activity page. More user-centric geo-"
-"options will be available soon."
+msgid "For now, the only option here is for setting your location as a user, which may then be used on your profile or activity page. More user-centric geo-options will be available soon."
 msgstr ""
 
 #: gpress-core/gpress-bp-functions.php:177
@@ -512,13 +528,22 @@ msgid "%s is presently located near %s"
 msgstr ""
 
 #: gpress-core/gpress-content-filter.php:7
-#: gpress-core/gpress-excerpt-filter.php:7 gpress-core/gpress-functions.php:71
-#: gpress-core/gpress-init.php:60 gpress-core/gpress-maps.php:6
-#: gpress-core/gpress-meta-boxes.php:4 gpress-core/gpress-meta-boxes.php:12
-#: gpress-core/gpress-meta-boxes.php:49 gpress-core/gpress-post-types.php:13
-#: gpress-core/gpress-post-types.php:68 gpress-core/gpress-rss.php:40
-#: gpress-core/gpress-rss.php:46 gpress-core/gpress-rss.php:68
-#: gpress-core/gpress-shortcodes.php:6 gpress-core/gpress-taxonomy.php:8
+#: gpress-core/gpress-excerpt-filter.php:7
+#: gpress-core/gpress-functions.php:71
+#: gpress-core/gpress-init.php:60
+#: gpress-core/gpress-maps.php:6
+#: gpress-core/gpress-meta-boxes.php:4
+#: gpress-core/gpress-meta-boxes.php:12
+#: gpress-core/gpress-meta-boxes.php:67
+#: gpress-core/gpress-post-types.php:42
+#: gpress-core/gpress-post-types.php:97
+#: gpress-core/gpress-rss.php:40
+#: gpress-core/gpress-rss.php:46
+#: gpress-core/gpress-rss.php:68
+#: gpress-core/gpress-shortcodes.php:6
+#: gpress-core/gpress-taxonomy.php:8
+#: gpress-core/widgets/widgets-fav-place.php:30
+#: gpress-core/widgets/widgets-recent-places.php:35
 msgid "place"
 msgstr ""
 
@@ -534,11 +559,13 @@ msgstr ""
 msgid "Click and drag the marker."
 msgstr ""
 
-#: gpress-core/gpress-maps.php:7 gpress-core/gpress-taxonomy.php:7
+#: gpress-core/gpress-maps.php:7
+#: gpress-core/gpress-taxonomy.php:7
 msgid "places"
 msgstr ""
 
-#: gpress-core/gpress-maps.php:8 gpress-core/gpress-taxonomy.php:33
+#: gpress-core/gpress-maps.php:8
+#: gpress-core/gpress-taxonomy.php:33
 msgid "placed"
 msgstr ""
 
@@ -550,7 +577,8 @@ msgstr ""
 msgid "Tag(s): "
 msgstr ""
 
-#: gpress-core/gpress-maps.php:491 gpress-core/gpress-shortcodes.php:95
+#: gpress-core/gpress-maps.php:491
+#: gpress-core/gpress-shortcodes.php:95
 #: gpress-core/gpress-shortcodes.php:171
 #: gpress-core/widgets/widgets-foursquare.php:101
 #: gpress-core/widgets/widgets-foursquare.php:177
@@ -562,12 +590,14 @@ msgstr ""
 msgid "%s was last spotted near %s"
 msgstr ""
 
-#: gpress-core/gpress-maps.php:497 gpress-core/gpress-maps.php:500
+#: gpress-core/gpress-maps.php:497
+#: gpress-core/gpress-maps.php:500
 #, php-format
 msgid "%s was geo-tagged at %s"
 msgstr ""
 
-#: gpress-core/gpress-maps.php:502 gpress-core/gpress-rss.php:54
+#: gpress-core/gpress-maps.php:502
+#: gpress-core/gpress-rss.php:54
 #, php-format
 msgid "%s is located near %s"
 msgstr ""
@@ -584,100 +614,100 @@ msgstr ""
 msgid "Location of Place:"
 msgstr ""
 
-#: gpress-core/gpress-meta-boxes.php:34
+#: gpress-core/gpress-meta-boxes.php:52
 msgid "Location of Post:"
 msgstr ""
 
-#: gpress-core/gpress-meta-boxes.php:53 gpress-core/gpress-meta-boxes.php:69
+#: gpress-core/gpress-meta-boxes.php:71
+#: gpress-core/gpress-meta-boxes.php:105
 msgid "Map Options"
 msgstr ""
 
-#: gpress-core/gpress-post-types.php:11
+#: gpress-core/gpress-post-types.php:40
 msgid "Place"
 msgstr ""
 
-#: gpress-core/gpress-post-types.php:12 gpress-core/gpress-post-types.php:22
+#: gpress-core/gpress-post-types.php:41
+#: gpress-core/gpress-post-types.php:51
 msgid "Add New Place"
 msgstr ""
 
-#: gpress-core/gpress-post-types.php:14
+#: gpress-core/gpress-post-types.php:43
 msgid "Places are represented as a marker on a map..."
 msgstr ""
 
-#: gpress-core/gpress-post-types.php:23
+#: gpress-core/gpress-post-types.php:52
 msgid "Edit Place"
 msgstr ""
 
-#: gpress-core/gpress-post-types.php:24
+#: gpress-core/gpress-post-types.php:53
 msgid "New Place"
 msgstr ""
 
-#: gpress-core/gpress-post-types.php:25
+#: gpress-core/gpress-post-types.php:54
 msgid "View Place"
 msgstr ""
 
-#: gpress-core/gpress-post-types.php:26
+#: gpress-core/gpress-post-types.php:55
 msgid "Search Places"
 msgstr ""
 
-#: gpress-core/gpress-post-types.php:27
+#: gpress-core/gpress-post-types.php:56
 msgid "No places found"
 msgstr ""
 
-#: gpress-core/gpress-post-types.php:28
+#: gpress-core/gpress-post-types.php:57
 msgid "No places found in Trash"
 msgstr ""
 
-#: gpress-core/gpress-post-types.php:72
+#: gpress-core/gpress-post-types.php:101
 #, php-format
 msgid "Place updated. <a href=\"%s\">View place</a>"
 msgstr ""
 
-#: gpress-core/gpress-post-types.php:73
+#: gpress-core/gpress-post-types.php:102
 msgid "Custom field updated."
 msgstr ""
 
-#: gpress-core/gpress-post-types.php:74
+#: gpress-core/gpress-post-types.php:103
 msgid "Custom field deleted."
 msgstr ""
 
-#: gpress-core/gpress-post-types.php:75
+#: gpress-core/gpress-post-types.php:104
 msgid "Place updated."
 msgstr ""
 
 #. translators: %s: date and time of the revision
-#: gpress-core/gpress-post-types.php:77
+#: gpress-core/gpress-post-types.php:106
 #, php-format
 msgid "Place restored to revision from %s"
 msgstr ""
 
-#: gpress-core/gpress-post-types.php:78
+#: gpress-core/gpress-post-types.php:107
 #, php-format
 msgid "Place published. <a href=\"%s\">View place</a>"
 msgstr ""
 
-#: gpress-core/gpress-post-types.php:79
+#: gpress-core/gpress-post-types.php:108
 msgid "Place saved."
 msgstr ""
 
-#: gpress-core/gpress-post-types.php:80
+#: gpress-core/gpress-post-types.php:109
 #, php-format
 msgid "Place submitted. <a target=\"_blank\" href=\"%s\">Preview place</a>"
 msgstr ""
 
-#: gpress-core/gpress-post-types.php:81
+#: gpress-core/gpress-post-types.php:110
 #, php-format
-msgid ""
-"Place scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s"
-"\">Preview place</a>"
+msgid "Place scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s\">Preview place</a>"
 msgstr ""
 
 #. translators: Publish box date format, see http://php.net/date
-#: gpress-core/gpress-post-types.php:83
+#: gpress-core/gpress-post-types.php:112
 msgid "M j, Y @ G:i"
 msgstr ""
 
-#: gpress-core/gpress-post-types.php:84
+#: gpress-core/gpress-post-types.php:113
 #, php-format
 msgid "Place draft updated. <a target=\"_blank\" href=\"%s\">Preview place</a>"
 msgstr ""
@@ -696,12 +726,11 @@ msgstr ""
 msgid "FOURSQUARE FUNCTIONALITY HAS BEEN TEMPORARILY DEACTIVATED"
 msgstr ""
 
-#: gpress-core/gpress-shortcodes.php:70 gpress-core/gpress-shortcodes.php:146
+#: gpress-core/gpress-shortcodes.php:70
+#: gpress-core/gpress-shortcodes.php:146
 #: gpress-core/widgets/widgets-foursquare.php:76
 #: gpress-core/widgets/widgets-foursquare.php:152
-msgid ""
-"did not have the time or patience to write a shout-out when checking-in to "
-"this location..."
+msgid "did not have the time or patience to write a shout-out when checking-in to this location..."
 msgstr ""
 
 #: gpress-core/gpress-taxonomy.php:5
@@ -797,9 +826,7 @@ msgid "Description <span>(PLAIN TEXT ONLY - ALL HTML WILL BE REMOVED)</span>"
 msgstr ""
 
 #: gpress-core/meta/meta-normal-places.php:39
-msgid ""
-"You have <span id=\"charactersLeft\">140</span> characters remaining (should "
-"you wish to send to Twitter too - coming soon!)"
+msgid "You have <span id=\"charactersLeft\">140</span> characters remaining (should you wish to send to Twitter too - coming soon!)"
 msgstr ""
 
 #: gpress-core/meta/meta-sidebar-content.php:4
@@ -856,9 +883,7 @@ msgid "Favorite Place"
 msgstr ""
 
 #: gpress-core/widgets/widgets-fav-place.php:48
-msgid ""
-"<p>You will first need to add a place ID within this widget's options in "
-"order for it to be displayed...</p>"
+msgid "<p>You will first need to add a place ID within this widget's options in order for it to be displayed...</p>"
 msgstr ""
 
 #: gpress-core/widgets/widgets-fav-place.php:124
@@ -908,24 +933,3 @@ msgstr ""
 msgid "Please note that gPress requires WordPress 3.0 or higher"
 msgstr ""
 
-#. Plugin Name of the plugin/theme
-msgid "gPress"
-msgstr ""
-
-#. Plugin URI of the plugin/theme
-msgid "http://pressbuddies.com/projects/geopress/"
-msgstr ""
-
-#. Description of the plugin/theme
-msgid ""
-"gPress adds new geo-relevant layers to WordPress, allowing you to create "
-"your own location-based services..."
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "PressBuddies"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "http://pressbuddies.com/"
-msgstr ""

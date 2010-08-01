@@ -6,6 +6,35 @@ function gpress_init() {
 	
 	global $tppo;
 	$use_places = $tppo->get_tppo('use_places', 'blogs');
+	$place_control = $tppo->get_tppo('place_control', 'sitewide');
+	if(empty($use_geopost)) {
+		$use_geopost = 'enabled';
+	}
+	if(empty($place_control)) {
+		$place_control = 'default';
+	}
+	if($place_control == 'master') {
+		$use_places = $tppo->get_tppo('use_places', 'blogs', 1);
+		if(empty($use_places)) {
+			$use_places = 'enabled';
+		}
+	}elseif($place_control == 'alone') {
+		global $blog_id;
+		if($blog_id !== 1) {
+			$use_places = 'disabled';
+		}
+	}
+	$gpress_places = $tppo->get_tppo('gpress_places', 'sitewide');
+	if(empty($gpress_places)) {
+		$gpress_places = 'default';
+	}
+	if($gpress_places == 'hide') {
+		if(is_super_admin()) {
+			$use_places = $use_geopost;
+		}else{
+			$use_places = 'disabled';				
+		}
+	}
 	
 	$places_plural_name = __( 'Places', 'gpress' );
 	$places_singular_name = __( 'Place', 'gpress' );

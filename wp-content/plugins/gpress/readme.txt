@@ -3,7 +3,7 @@ Contributors: msmalley, jimmynguyc, pressbuddies
 Tags: buddypress, geotagging, geo-tagging, geo, gpress, gmaps, google maps, google, maps, map, mapping
 Requires at least: WordPress 3.0 / BuddyPress 1.2.5.2
 Tested up to: WordPress 3.0 / BuddyPress 1.2.5.2
-Stable tag: 0.2.4
+Stable tag: 0.2.4.1
 Donate link: http://pressbuddies.com/sponsorships/
 
 gPress adds new geo-relevant layers to the press platforms so you can geo-tag your surroundings or develop your own location-based services...
@@ -87,10 +87,15 @@ gPress and Geolocation cannot be used together. gPress does everything Geolocati
 
 == Upgrade Notice ==
 
-= 0.2.4 =
-MAJOR UPDATE - FULLY TRANSLATABLE VIA POT / MO
+= 0.2.4.1 =
+CRITICAL UPDATE - FIXED IS SET AND IE PROBLEMS
 
 == Changelog ==
+
+= 0.2.4.1 =
+* FIXED "IS SET" PROBLEM
+* FIXED Bug with gPress Options in IE
+* ADDED Advanced Settings > Sitewide Options
 
 = 0.2.4 =
 * ADDED Full Translation Capability for Everything
@@ -300,27 +305,33 @@ gPress will ultimately consist of several CORE modules and also be Buddypress co
 24. Complete Customisation of Language and Lingo
 
 == Highest Priority - planned for gPress v0.2+ ==
-1.  gPress Options / Menu Items for different User Levels
-2.  Better Options for Displaying Maps (jQuery Dialog)
-3.  Additional BuddyPress Integration as follows:
-4.  Group Maps (with Group Members)
-5.  Introduce New Geo-Tagged Components as follows:
-6.  Geo-Tagged Blogs
-7.  Geo-Tagged Comments
-8.  Geo-Tagged Photos
-9.  Geo-Tagged Activity Streams
-10. Further Social-Media Integration as follows:
-11. Foursquare Venues + Tips (GET and PUSH)
-12. Foursquare PUSH Functionality (Create Venues + Checkins)
-13. Twitter / Facebook Integration
-14. BP Members, Groups and Blogs Directory Maps
-15. Search Functionality for Front-End Maps
-16. Search Functionality as Option for Widgets
-17. Template Control of Map (Open, Closed, Sidebar)
-18. Importing / Exporting Locations (CSV)
-19. Easy Custom Styling / Marker Management
+1.  Add Another TPPO in Front-End for BP "USER" Options
+2.  Improved Widgets (Drop-Down for Fav Place)
+3.  Add Spanish Version and WP_LANG Checks
+4.  Better Options for Displaying Maps (jQuery Dialog)
+5.  Additional BuddyPress Integration as follows:
+6.  Group Maps (with Group Members)
+7.  Introduce New Geo-Tagged Components as follows:
+8.  Geo-Tagged Blogs
+9.  Geo-Tagged Comments
+10. Geo-Tagged Photos
+11. Geo-Tagged Activity Streams
+12. Further Social-Media Integration as follows:
+13. Foursquare Venues + Tips (GET and PUSH)
+14. Foursquare PUSH Functionality (Create Venues + Checkins)
+15. Twitter / Facebook Integration
+16. BP Members, Groups and Blogs Directory Maps
+17. Search Functionality for Front-End Maps
+18. Search Functionality as Option for Widgets
+19. Template Control of Map (Open, Closed, Sidebar)
+20. Importing / Exporting Locations (CSV)
+21. Easy Custom Styling / Marker Management
+22. Showcase Content Based on Location
+23. Integration with Google Places (GET / PUSH)
+24. Add Places to Posts / Activity Streams
 
 == Future Modules Include - gPress v0.3+ ==
+0. Seperate gPress Plugins (4sq, etc) from Core
 1. Action Hooks and Filters with Documentation for Developers
 2. Movements (move with linear, non-linear and stealth motion)
 3. Actions (interact with locations, people and objects)

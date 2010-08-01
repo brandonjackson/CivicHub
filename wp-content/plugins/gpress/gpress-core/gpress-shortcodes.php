@@ -244,9 +244,9 @@ function gpress_shortcode($map_settings, $content = null) {
 			if($place_id == 'all') {
 				$place_array = array();
 				if(empty($max_places)) {
-					query_posts('post_type=place');				
+					query_posts('post_type='.$places_taxonomy.'');				
 				}else{
-					query_posts('post_type=place&showposts='.$max_places.'');
+					query_posts('post_type='.$places_taxonomy.'&showposts='.$max_places.'');
 				}
 				if ( have_posts() ) : while ( have_posts() ) : the_post();
 					global $post;

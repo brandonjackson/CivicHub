@@ -160,7 +160,7 @@ function gpress_add_map($gpress_map_settings) {
 				$this_map_shadow = $default_marker_shadow;
 			}
 			
-			$marker_url = get_bloginfo('url').'/?post_type=place&p='.$place_id.'';
+			$marker_url = get_bloginfo('url').'/?post_type='.$places_taxonomy.'&p='.$place_id.'';
 			
 			$marker_array = array();
 			$marker_array[$place_id]['latlng'] = $meta['latlng'];
@@ -181,12 +181,12 @@ function gpress_add_map($gpress_map_settings) {
 		}else{
 			$gpid = ''.$map_id.'_'.$widget_id.'';
 			
-			$marker_url = get_bloginfo('url').'/?post_type=place&p='.$place_id.'';
+			$marker_url = get_bloginfo('url').'/?post_type='.$places_taxonomy.'&p='.$place_id.'';
 			$meta = get_post_meta($place_id,'_gpress_places',TRUE);
 			$map_position = $meta['latlng'];
 			$using_gpress_widget = true;		
 			
-			query_posts('post_type=place&p='.$place_id.'');
+			query_posts('post_type='.$places_taxonomy.'&p='.$place_id.'');
 			if ( have_posts() ) : while ( have_posts() ) : the_post();
 			$gpress_this_place_title = single_post_title('', FALSE);
 			endwhile; else:

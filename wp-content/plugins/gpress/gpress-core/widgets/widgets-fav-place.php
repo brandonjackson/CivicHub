@@ -27,7 +27,7 @@ class GPRESS_FAV_PLACE_WIDGET extends WP_Widget {
 		if(empty($placeid)) {
 			$gpress_this_place_title = __('Favorite Place', 'gpress');
 		}else{
-			query_posts('post_type=place&p='.$placeid.'');
+			query_posts('post_type='.__('place', 'gpress').'&p='.$placeid.'');
 			if ( have_posts() ) : while ( have_posts() ) : the_post();
 			$gpress_this_place_title = single_post_title('', FALSE);
 			endwhile; else:

@@ -32,7 +32,7 @@ class GPRESS_RECENT_PLACES_WIDGET extends WP_Widget {
 				echo '<h3 class="widget-title">'.__('Recent Places', 'gpress').'</h3>';
 			}	
 			
-			query_posts('post_type=place&showposts='.$count.'');
+			query_posts('post_type='.__('place', 'gpress').'&showposts='.$count.'');
 			echo '<ul>';
 				if ( have_posts() ) : while ( have_posts() ) : the_post();
 					echo '<li><a href="'.get_permalink().'">'.get_the_title().'</a></li>';

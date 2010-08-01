@@ -4,7 +4,7 @@
 Plugin Name: gPress
 Plugin URI: http://pressbuddies.com/projects/geopress/
 Description: gPress adds new geo-relevant layers to WordPress, allowing you to create your own location-based services...
-Version: 0.2.4
+Version: 0.2.4.1
 Requires at least: WordPress 3.0 / BuddyPress 1.2.5.2
 Tested up to: WordPress 3.0 / BuddyPress 1.2.5.2
 License: GNU/GPL 2

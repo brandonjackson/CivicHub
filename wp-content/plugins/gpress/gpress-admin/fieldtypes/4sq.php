@@ -27,8 +27,6 @@ if(phpversion() < 5) {
 	// Foursquare and oAuthg Requires session to work
 	if(!isset($_SESSION)) {
 		session_start();
-	}else{
-		echo 'IS SET'; exit;
 	}
 	
 	function display_tppo_4sq($thisfield, $tpp_id){

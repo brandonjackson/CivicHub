@@ -52,7 +52,6 @@ if(!class_exists('TPPOptions')){
 			
 			$this->initialize_tppo_config();
 		}
-		
 		function set_config($config){
 			$default_configs = array(
 				'name' => 'tpp_options',

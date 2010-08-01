@@ -26,6 +26,24 @@ function gpress_meta_normal_init() {
 	
 	global $tppo;
 	$use_geopost = $tppo->get_tppo('use_geopost', 'blogs');
+	$post_control = $tppo->get_tppo('post_control', 'sitewide');
+	if(empty($use_geopost)) {
+		$use_geopost = 'enabled';
+	}
+	if(empty($post_control)) {
+		$post_control = 'default';
+	}
+	if($post_control == 'master') {
+		$use_geopost = $tppo->get_tppo('use_geopost', 'blogs', 1);
+		if(empty($use_geopost)) {
+			$use_geopost = 'enabled';
+		}
+	}elseif($post_control == 'alone') {
+		global $blog_id;
+		if($blog_id !== 1) {
+			$use_geopost = 'disabled';
+		}
+	}
 	
 	if($use_geopost == 'enabled') {
 
@@ -61,6 +79,24 @@ function gpress_meta_sidebar_init() {
 	
 	global $tppo;
 	$use_geopost = $tppo->get_tppo('use_geopost', 'blogs');
+	$post_control = $tppo->get_tppo('post_control', 'sitewide');
+	if(empty($use_geopost)) {
+		$use_geopost = 'enabled';
+	}
+	if(empty($post_control)) {
+		$post_control = 'default';
+	}
+	if($post_control == 'master') {
+		$use_geopost = $tppo->get_tppo('use_geopost', 'blogs', 1);
+		if(empty($use_geopost)) {
+			$use_geopost = 'enabled';
+		}
+	}elseif($post_control == 'alone') {
+		global $blog_id;
+		if($blog_id !== 1) {
+			$use_geopost = 'disabled';
+		}
+	}
 	
 	if($use_geopost == 'enabled') {
 	

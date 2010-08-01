@@ -1,0 +1,907 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gPress 0.2.3.2\n"
+"POT-Creation-Date: 2010-07-17 10:35+0800\n"
+"PO-Revision-Date: 2010-07-17 11:42+0800\n"
+"Last-Translator: Mark Smalley <mark@smalley.my>\n"
+"Language-Team: PressBuddies\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
+"X-Poedit-Basepath: /wp-content/plugins/gpress/\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED KINGDOM\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: gpress-admin/config/gpress_options.php:49
+msgid "gPress Components"
+msgstr ""
+
+#: gpress-admin/config/gpress_options.php:50
+msgid "General Settings"
+msgstr ""
+
+#: gpress-admin/config/gpress_options.php:52
+#: gpress-admin/config/gpress_options.php:54
+#: gpress-core/meta/meta-sidebar-content.php:22
+#: gpress-core/widgets/widgets-fav-place.php:152
+#: gpress-core/widgets/widgets-foursquare.php:323
+msgid "Advanced Settings"
+msgstr ""
+
+#: gpress-admin/config/gpress_options.php:56
+msgid "Social-Media"
+msgstr ""
+
+#: gpress-admin/config/gpress_options.php:58
+#: gpress-admin/config/gpress_options.php:60
+msgid "BuddyPress"
+msgstr ""
+
+#: gpress-admin/config/gpress_options.php:64
+msgid "Module Control"
+msgstr ""
+
+#: gpress-admin/config/gpress_options.php:66
+#: gpress-admin/config/gpress_options.php:68
+#: gpress-admin/config/gpress_options_fields.php:7
+msgid "Geo-Tagged Posts"
+msgstr ""
+
+#: gpress-admin/config/gpress_options.php:70
+msgid "Map Settings"
+msgstr ""
+
+#: gpress-admin/config/gpress_options.php:71
+msgid "Marker Settings"
+msgstr ""
+
+#: gpress-admin/config/gpress_options.php:74
+#: gpress-admin/config/gpress_options.php:81
+msgid "Loop Settings"
+msgstr ""
+
+#: gpress-admin/config/gpress_options.php:75
+#: gpress-admin/config/gpress_options.php:82
+msgid "Excerpt Settings"
+msgstr ""
+
+#: gpress-admin/config/gpress_options.php:76
+#: gpress-admin/config/gpress_options.php:83
+msgid "Brand Settings"
+msgstr ""
+
+#: gpress-admin/config/gpress_options.php:77
+#: gpress-admin/config/gpress_options.php:84
+msgid "Credits"
+msgstr ""
+
+#: gpress-admin/config/gpress_options.php:78
+#: gpress-admin/config/gpress_options.php:85
+msgid "MISC Settings"
+msgstr ""
+
+#: gpress-admin/config/gpress_options.php:79
+#: gpress-admin/config/gpress_options.php:86
+msgid "Language / Lingo"
+msgstr ""
+
+#: gpress-admin/config/gpress_options.php:89
+#: gpress-admin/config/gpress_options.php:91
+#: gpress-core/widgets/widgets-foursquare.php:32
+msgid "Foursquare"
+msgstr ""
+
+#: gpress-admin/config/gpress_options.php:94
+#: gpress-admin/config/gpress_options.php:96
+msgid "BP Components"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_descriptions.php:2
+msgid ""
+"These options allow you to turn on (or) off the various gPress modules..."
+msgstr ""
+
+#: gpress-admin/config/gpress_options_descriptions.php:3
+msgid ""
+"These options allow you to fine-tune the geo-tagged post functionality..."
+msgstr ""
+
+#: gpress-admin/config/gpress_options_descriptions.php:4
+msgid ""
+"This allows you to control the way excerpts are handled on the homepage of "
+"your theme. Some themes strip-out HTML tags with the excerpts, or use full-"
+"content instead - so these options provide fine-grain control over these "
+"components..."
+msgstr ""
+
+#: gpress-admin/config/gpress_options_descriptions.php:5
+msgid "These options allow you to control the rendered maps..."
+msgstr ""
+
+#: gpress-admin/config/gpress_options_descriptions.php:6
+msgid "These options allow you to set new default markers..."
+msgstr ""
+
+#: gpress-admin/config/gpress_options_descriptions.php:7
+msgid ""
+"<p>All options from the Advanced Settings tab are only visible to Super "
+"Admins.</p><p>These allow you to add or remove the places shown on the "
+"homepage by controlling the post types querried. If loops start acting "
+"strange, please switch to \"POSTS ONLY\", which removes the the filters...</"
+"p><p>Please note that some plugins are unable to handle post_type arrays, "
+"and only work when querrying one type, such as either posts or places...</p>"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_descriptions.php:8
+msgid ""
+"<p>All options from the Advanced Settings tab are only visible to Super "
+"Admins.</p><p>Although it is hugely appreciate if you provide some form of "
+"shout-back or recognition for gPress, we understand that some situations "
+"require re-branding, and do not want you to edit core files, so use these "
+"options instead:</p>"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_descriptions.php:9
+msgid ""
+"<p>All options from the Advanced Settings tab are only visible to Super "
+"Admins.</p><p>These options allow you to remove our credits from the front-"
+"end...</p><p>Although it is hugely appreciate if you provide some form of "
+"shout-back or recognition for gPress, we understand that some situations "
+"require re-branding, and do not want you to edit core files, so use these "
+"options instead:</p>"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_descriptions.php:10
+msgid ""
+"Other MISC advanced settings can be found here, such as the removal of "
+"jQuery from your theme, emergency deactivation of Foursquare, and so forth..."
+msgstr ""
+
+#: gpress-admin/config/gpress_options_descriptions.php:11
+msgid "These options allow you to integrate with Foursquare..."
+msgstr ""
+
+#: gpress-admin/config/gpress_options_descriptions.php:12
+msgid "These options allow you to control the BuddyPress integration..."
+msgstr ""
+
+#: gpress-admin/config/gpress_options_descriptions.php:13
+msgid ""
+"<p>In the future, these options will allow you to easily switch languages, "
+"but for now, as an example of the flexibility we are adding into our "
+"language system, you can change all references of \"places\" into \"venues"
+"\"</p><p><strong>HOWEVER</strong>, please note that after switching language "
+"and clicking \"SAVE CHANGES\", you will need to refresh the page once again "
+"to ensure everything gets flushed and refreshed properly...</p>"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:8
+msgid "geoRSS"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:9
+#: gpress-core/gpress-post-types.php:10
+msgid "Places"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:11
+msgid "Force Geo-Tagged Posting Capability"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:13
+msgid "Default Map Height"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:13
+msgid "This is a numbers only field (defaults to 450)"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:14
+msgid "Default Map Type"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:15
+msgid "Default Map Zoom"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:17
+msgid "Marker icon URL for Geo-Tageed Posts"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:17
+#: gpress-admin/config/gpress_options_fields.php:18
+#: gpress-admin/config/gpress_options_fields.php:19
+#: gpress-admin/config/gpress_options_fields.php:20
+#: gpress-admin/config/gpress_options_fields.php:21
+#: gpress-admin/config/gpress_options_fields.php:22
+msgid "This should start with http://"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:18
+msgid "Marker shadow URL for Geo-Tageed Posts"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:19
+msgid "Marker icon URL for Place Post Types"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:20
+msgid "Marker shadow URL for Place Post Types"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:21
+msgid "Marker icon URL for Favorite Place Widgets"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:22
+msgid "Marker shadow URL for Favorite Place Widgets"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:24
+msgid "Homepage Loop"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:24
+msgid "This controls the query_post for the homepage..."
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:25
+msgid "Home Loop Method"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:25
+msgid ""
+"There are two methods for getting your homepage loop to accept the new "
+"custom post types, we can either inject a query_posts into the header or "
+"directly manipulate the query with the pre_get_posts method. Unofrtunately, "
+"neither are perfect and both have problems with other plugins or themes that "
+"also use these methods, so we have provided you with the choice..."
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:27
+msgid "Remove Maps from Themes Homepage Content Loop"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:28
+msgid "Remove Maps<br />from Excerpts"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:30
+msgid "Twitter URL"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:30
+msgid "Linked to the Twitter icon seen on gPress Options page"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:31
+msgid "Facebook URL"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:31
+msgid "Linked to the Facebook icon seen on gPress Options page"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:32
+msgid "RSS URL"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:32
+msgid "Linked to the RSS icon seen on gPress Options page"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:34
+msgid "Show credits on geo-tagged posts"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:35
+msgid "Show credits on place post type maps"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:36
+msgid "Show credits on shortcode maps"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:37
+msgid "Show credits on Foursquare maps"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:39
+msgid "Use jQuery 1.4.2 in Theme"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:39
+msgid ""
+"In emergencies, you may want to remove the gPress jQuery 1.4.2 from your "
+"theme"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:40
+msgid "Deactivate Foursquare"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:40
+msgid ""
+"The Foursquare oAuth processs has several requirements not all servers "
+"support, and failure to connect, or when their API happens to be down means "
+"you cannot access your site. If this happens, use this feature to deactivate "
+"all Foursquare activity, then refresh this page..."
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:42
+msgid "Which Language or Lingo to use? "
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:43
+msgid "Name of custom MO "
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:43
+msgid ""
+"This file should be located in \"gpress/gpress-lang\" such as \"gpress-"
+"default\", which is the default setting"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:45
+msgid "Foursquare Auth"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:46
+msgid "Foursquare Key"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:47
+msgid "Foursquare Secret"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:49
+msgid "Show User Locations<br />on BuddyPress Profiles"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:50
+msgid "Show Closest Address<br />on User's Profile Page"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_fields.php:51
+msgid "Show Geo-Tagged Posts on User's Activity Page"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_lists.php:4
+msgid "ENABLED"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_lists.php:5
+msgid "DISABLED"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_lists.php:8
+#: gpress-admin/config/gpress_options_lists.php:13
+msgid "NO"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_lists.php:9
+#: gpress-admin/config/gpress_options_lists.php:12
+msgid "YES"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_lists.php:16
+msgid "DIRECT QUERY MANIPULATION"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_lists.php:17
+msgid "QUERY POSTS (IN HEADER)"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_lists.php:20
+msgid "ABOVE PROFILE FIELDS"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_lists.php:21
+msgid "BELOW PROFILE FIELDS"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_lists.php:22
+msgid "DO NOT DISPLAY"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_lists.php:25
+msgid "BOTH POSTS AND PLACES"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_lists.php:26
+msgid "POSTS ONLY"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_lists.php:27
+msgid "PLACES ONLY"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_lists.php:30
+msgid "ROADPMAP VIEW"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_lists.php:31
+msgid "SATELLITE VIEW"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_lists.php:32
+msgid "HYBRID VIEW"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_lists.php:33
+msgid "TERRAIN VIEW"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_lists.php:36
+msgid "CLOSE-UP"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_lists.php:37
+msgid "NEARBY"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_lists.php:38
+msgid "CITY VIEW"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_lists.php:39
+msgid "COUNTRY VIEW"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_lists.php:42
+msgid "DEFAULT LANGUAGE / LINGO SETTINGS"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_lists.php:43
+msgid "CHANGE LOCATIONS TO VENUES"
+msgstr ""
+
+#: gpress-admin/config/gpress_options_lists.php:44
+msgid "USE THE CUSTOM FILE BELOW"
+msgstr ""
+
+#: gpress-core/gpress-bp-functions.php:80
+msgid "Present Location:"
+msgstr ""
+
+#: gpress-core/gpress-bp-functions.php:82
+#: gpress-core/gpress-bp-functions.php:144
+msgid "Sitewide Geo-Tagged Posts:"
+msgstr ""
+
+#: gpress-core/gpress-bp-functions.php:87
+#: gpress-core/gpress-bp-functions.php:174
+#: gpress-core/gpress-bp-functions.php:229
+msgid "Geo-Settings"
+msgstr ""
+
+#: gpress-core/gpress-bp-functions.php:88
+#: gpress-core/gpress-bp-functions.php:218
+#, php-format
+msgid ""
+"If you would like to display your location here, you first need to goto your "
+"%s page and add your location."
+msgstr ""
+
+#: gpress-core/gpress-bp-functions.php:164
+msgid "BuddyPress Geo Settings"
+msgstr ""
+
+#: gpress-core/gpress-bp-functions.php:175
+msgid ""
+"For now, the only option here is for setting your location as a user, which "
+"may then be used on your profile or activity page. More user-centric geo-"
+"options will be available soon."
+msgstr ""
+
+#: gpress-core/gpress-bp-functions.php:177
+msgid "Your Present Location:"
+msgstr ""
+
+#: gpress-core/gpress-bp-functions.php:199
+msgid "Save Changes"
+msgstr ""
+
+#: gpress-core/gpress-bp-functions.php:213
+#, php-format
+msgid "%s is presently located near %s"
+msgstr ""
+
+#: gpress-core/gpress-content-filter.php:7
+#: gpress-core/gpress-excerpt-filter.php:7 gpress-core/gpress-functions.php:71
+#: gpress-core/gpress-init.php:60 gpress-core/gpress-maps.php:6
+#: gpress-core/gpress-meta-boxes.php:4 gpress-core/gpress-meta-boxes.php:12
+#: gpress-core/gpress-meta-boxes.php:49 gpress-core/gpress-post-types.php:13
+#: gpress-core/gpress-post-types.php:68 gpress-core/gpress-rss.php:40
+#: gpress-core/gpress-rss.php:46 gpress-core/gpress-rss.php:68
+#: gpress-core/gpress-shortcodes.php:6 gpress-core/gpress-taxonomy.php:8
+msgid "place"
+msgstr ""
+
+#: gpress-core/gpress-geoform.php:266
+msgid "Closest address:"
+msgstr ""
+
+#: gpress-core/gpress-geoform.php:277
+msgid "Marker status:"
+msgstr ""
+
+#: gpress-core/gpress-geoform.php:278
+msgid "Click and drag the marker."
+msgstr ""
+
+#: gpress-core/gpress-maps.php:7 gpress-core/gpress-taxonomy.php:7
+msgid "places"
+msgstr ""
+
+#: gpress-core/gpress-maps.php:8 gpress-core/gpress-taxonomy.php:33
+msgid "placed"
+msgstr ""
+
+#: gpress-core/gpress-maps.php:9
+msgid "Type(s) of Place: "
+msgstr ""
+
+#: gpress-core/gpress-maps.php:10
+msgid "Tag(s): "
+msgstr ""
+
+#: gpress-core/gpress-maps.php:491 gpress-core/gpress-shortcodes.php:95
+#: gpress-core/gpress-shortcodes.php:171
+#: gpress-core/widgets/widgets-foursquare.php:101
+#: gpress-core/widgets/widgets-foursquare.php:177
+msgid "was not given an address"
+msgstr ""
+
+#: gpress-core/gpress-maps.php:494
+#, php-format
+msgid "%s was last spotted near %s"
+msgstr ""
+
+#: gpress-core/gpress-maps.php:497 gpress-core/gpress-maps.php:500
+#, php-format
+msgid "%s was geo-tagged at %s"
+msgstr ""
+
+#: gpress-core/gpress-maps.php:502 gpress-core/gpress-rss.php:54
+#, php-format
+msgid "%s is located near %s"
+msgstr ""
+
+#: gpress-core/gpress-maps.php:512
+msgid "No image or description has yet been added to this place..."
+msgstr ""
+
+#: gpress-core/gpress-maps.php:602
+msgid "No description was provided..."
+msgstr ""
+
+#: gpress-core/gpress-meta-boxes.php:18
+msgid "Location of Place:"
+msgstr ""
+
+#: gpress-core/gpress-meta-boxes.php:34
+msgid "Location of Post:"
+msgstr ""
+
+#: gpress-core/gpress-meta-boxes.php:53 gpress-core/gpress-meta-boxes.php:69
+msgid "Map Options"
+msgstr ""
+
+#: gpress-core/gpress-post-types.php:11
+msgid "Place"
+msgstr ""
+
+#: gpress-core/gpress-post-types.php:12 gpress-core/gpress-post-types.php:22
+msgid "Add New Place"
+msgstr ""
+
+#: gpress-core/gpress-post-types.php:14
+msgid "Places are represented as a marker on a map..."
+msgstr ""
+
+#: gpress-core/gpress-post-types.php:23
+msgid "Edit Place"
+msgstr ""
+
+#: gpress-core/gpress-post-types.php:24
+msgid "New Place"
+msgstr ""
+
+#: gpress-core/gpress-post-types.php:25
+msgid "View Place"
+msgstr ""
+
+#: gpress-core/gpress-post-types.php:26
+msgid "Search Places"
+msgstr ""
+
+#: gpress-core/gpress-post-types.php:27
+msgid "No places found"
+msgstr ""
+
+#: gpress-core/gpress-post-types.php:28
+msgid "No places found in Trash"
+msgstr ""
+
+#: gpress-core/gpress-post-types.php:72
+#, php-format
+msgid "Place updated. <a href=\"%s\">View place</a>"
+msgstr ""
+
+#: gpress-core/gpress-post-types.php:73
+msgid "Custom field updated."
+msgstr ""
+
+#: gpress-core/gpress-post-types.php:74
+msgid "Custom field deleted."
+msgstr ""
+
+#: gpress-core/gpress-post-types.php:75
+msgid "Place updated."
+msgstr ""
+
+#. translators: %s: date and time of the revision
+#: gpress-core/gpress-post-types.php:77
+#, php-format
+msgid "Place restored to revision from %s"
+msgstr ""
+
+#: gpress-core/gpress-post-types.php:78
+#, php-format
+msgid "Place published. <a href=\"%s\">View place</a>"
+msgstr ""
+
+#: gpress-core/gpress-post-types.php:79
+msgid "Place saved."
+msgstr ""
+
+#: gpress-core/gpress-post-types.php:80
+#, php-format
+msgid "Place submitted. <a target=\"_blank\" href=\"%s\">Preview place</a>"
+msgstr ""
+
+#: gpress-core/gpress-post-types.php:81
+#, php-format
+msgid ""
+"Place scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s"
+"\">Preview place</a>"
+msgstr ""
+
+#. translators: Publish box date format, see http://php.net/date
+#: gpress-core/gpress-post-types.php:83
+msgid "M j, Y @ G:i"
+msgstr ""
+
+#: gpress-core/gpress-post-types.php:84
+#, php-format
+msgid "Place draft updated. <a target=\"_blank\" href=\"%s\">Preview place</a>"
+msgstr ""
+
+#: gpress-core/gpress-rss.php:60
+msgid "Description:"
+msgstr ""
+
+#: gpress-core/gpress-shortcodes.php:37
+#: gpress-core/widgets/widgets-foursquare.php:43
+msgid "YOU MUST HAVE PHP5+ TO USE FOURSQUARE FUNCTIONALITY"
+msgstr ""
+
+#: gpress-core/gpress-shortcodes.php:42
+#: gpress-core/widgets/widgets-foursquare.php:48
+msgid "FOURSQUARE FUNCTIONALITY HAS BEEN TEMPORARILY DEACTIVATED"
+msgstr ""
+
+#: gpress-core/gpress-shortcodes.php:70 gpress-core/gpress-shortcodes.php:146
+#: gpress-core/widgets/widgets-foursquare.php:76
+#: gpress-core/widgets/widgets-foursquare.php:152
+msgid ""
+"did not have the time or patience to write a shout-out when checking-in to "
+"this location..."
+msgstr ""
+
+#: gpress-core/gpress-taxonomy.php:5
+msgid "Types of Places"
+msgstr ""
+
+#: gpress-core/gpress-taxonomy.php:6
+msgid "Type of Place"
+msgstr ""
+
+#: gpress-core/gpress-taxonomy.php:14
+msgid "Search Types of Places"
+msgstr ""
+
+#: gpress-core/gpress-taxonomy.php:15
+msgid "All Types of Places"
+msgstr ""
+
+#: gpress-core/gpress-taxonomy.php:16
+msgid "Parent Types of Places"
+msgstr ""
+
+#: gpress-core/gpress-taxonomy.php:17
+msgid "Parent Type of Place:"
+msgstr ""
+
+#: gpress-core/gpress-taxonomy.php:18
+msgid "Edit Type of Place"
+msgstr ""
+
+#: gpress-core/gpress-taxonomy.php:19
+msgid "Update Type of Place"
+msgstr ""
+
+#: gpress-core/gpress-taxonomy.php:20
+msgid "Add New Type of Place"
+msgstr ""
+
+#: gpress-core/gpress-taxonomy.php:21
+msgid "New Type of Place"
+msgstr ""
+
+#: gpress-core/gpress-taxonomy.php:31
+msgid "Place Tags"
+msgstr ""
+
+#: gpress-core/gpress-taxonomy.php:32
+msgid "Place Tag"
+msgstr ""
+
+#: gpress-core/gpress-taxonomy.php:39
+msgid "Search Place Tags"
+msgstr ""
+
+#: gpress-core/gpress-taxonomy.php:40
+msgid "Popular Place Tags"
+msgstr ""
+
+#: gpress-core/gpress-taxonomy.php:41
+msgid "All Place Tags"
+msgstr ""
+
+#: gpress-core/gpress-taxonomy.php:44
+msgid "Edit Place Tag"
+msgstr ""
+
+#: gpress-core/gpress-taxonomy.php:45
+msgid "Update Place Tag"
+msgstr ""
+
+#: gpress-core/gpress-taxonomy.php:46
+msgid "Add New Place Tag"
+msgstr ""
+
+#: gpress-core/gpress-taxonomy.php:47
+msgid "New Place Tag Name"
+msgstr ""
+
+#: gpress-core/gpress-taxonomy.php:48
+msgid "Separate place tags with commas"
+msgstr ""
+
+#: gpress-core/gpress-taxonomy.php:49
+msgid "Add or remove place tags"
+msgstr ""
+
+#: gpress-core/gpress-taxonomy.php:50
+msgid "Choose from the most used place tags"
+msgstr ""
+
+#: gpress-core/meta/meta-normal-places.php:35
+msgid "Description <span>(PLAIN TEXT ONLY - ALL HTML WILL BE REMOVED)</span>"
+msgstr ""
+
+#: gpress-core/meta/meta-normal-places.php:39
+msgid ""
+"You have <span id=\"charactersLeft\">140</span> characters remaining (should "
+"you wish to send to Twitter too - coming soon!)"
+msgstr ""
+
+#: gpress-core/meta/meta-sidebar-content.php:4
+msgid "Map Type:"
+msgstr ""
+
+#: gpress-core/meta/meta-sidebar-content.php:12
+msgid "Zoom Level:"
+msgstr ""
+
+#: gpress-core/meta/meta-sidebar-content.php:25
+#: gpress-core/widgets/widgets-fav-place.php:155
+#: gpress-core/widgets/widgets-foursquare.php:326
+msgid "Overwrite default height for this map:"
+msgstr ""
+
+#: gpress-core/meta/meta-sidebar-content.php:27
+#: gpress-core/widgets/widgets-fav-place.php:157
+msgid "Numbers only (defaults to"
+msgstr ""
+
+#: gpress-core/meta/meta-sidebar-content.php:29
+#: gpress-core/widgets/widgets-fav-place.php:159
+msgid "Custom icon URL for this map:"
+msgstr ""
+
+#: gpress-core/meta/meta-sidebar-content.php:31
+#: gpress-core/meta/meta-sidebar-content.php:35
+#: gpress-core/widgets/widgets-fav-place.php:161
+#: gpress-core/widgets/widgets-fav-place.php:165
+msgid "This imaage should be 42px X 43px"
+msgstr ""
+
+#: gpress-core/meta/meta-sidebar-content.php:33
+#: gpress-core/widgets/widgets-fav-place.php:163
+msgid "Custom shadow URL for this map:"
+msgstr ""
+
+#: gpress-core/tinymce/gpress.php:17
+msgid "gPress TinyMCE Editor"
+msgstr ""
+
+#: gpress-core/tinymce/gpress4sq.php:17
+msgid "gPress Foursquare TinyMCE Editor"
+msgstr ""
+
+#: gpress-core/widgets/widgets-fav-place.php:12
+msgid "Pick your favorite place to show on map"
+msgstr ""
+
+#: gpress-core/widgets/widgets-fav-place.php:13
+#: gpress-core/widgets/widgets-fav-place.php:28
+msgid "Favorite Place"
+msgstr ""
+
+#: gpress-core/widgets/widgets-fav-place.php:48
+msgid ""
+"<p>You will first need to add a place ID within this widget's options in "
+"order for it to be displayed...</p>"
+msgstr ""
+
+#: gpress-core/widgets/widgets-fav-place.php:124
+#: gpress-core/widgets/widgets-foursquare.php:279
+#: gpress-core/widgets/widgets-recent-places.php:62
+msgid "Widget Title:"
+msgstr ""
+
+#: gpress-core/widgets/widgets-fav-place.php:129
+msgid "Place ID:"
+msgstr ""
+
+#: gpress-core/widgets/widgets-foursquare.php:12
+msgid "Add a Foursquare map to your sidebar"
+msgstr ""
+
+#: gpress-core/widgets/widgets-foursquare.php:13
+msgid "Foursquare Widget"
+msgstr ""
+
+#: gpress-core/widgets/widgets-foursquare.php:246
+msgid "There appears to be a problem with the Foursquare integration..."
+msgstr ""
+
+#: gpress-core/widgets/widgets-foursquare.php:302
+msgid "YOUR LOCATION"
+msgstr ""
+
+#: gpress-core/widgets/widgets-foursquare.php:313
+msgid "FRIENDS LOCATIONS"
+msgstr ""
+
+#: gpress-core/widgets/widgets-recent-places.php:12
+msgid "The most recent places on your site"
+msgstr ""
+
+#: gpress-core/widgets/widgets-recent-places.php:13
+#: gpress-core/widgets/widgets-recent-places.php:32
+msgid "Recent Places"
+msgstr ""
+
+#: gpress-core/widgets/widgets-recent-places.php:67
+msgid "Number of Places:"
+msgstr ""
+
+#: gpress.php:38
+msgid "Please note that gPress requires WordPress 3.0 or higher"
+msgstr ""

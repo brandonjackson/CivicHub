@@ -18,7 +18,7 @@
 
 				<div class="post" id="post-<?php the_ID(); ?>">
 					<div class='post_votes'>
-						<?php DisplayVotes(get_the_ID()); ?>
+						<?php $BallotBox->DisplayVotes(get_the_ID()); ?>
 					</div>
 
 					<div class="post-content">
