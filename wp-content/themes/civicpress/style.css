@@ -18,7 +18,7 @@ Tags: buddypress, two-column, grey, dark
 -------------------------------------------------------------- */
 
 body {
-	background: #eaeaea url( assets/images/background.gif ) top left repeat-x;
+	background: white;
 	font-size: 12px;
 	font-family: Helvetica, Arial, Tahoma, Verdana, sans-serif;
 	line-height: 170%;
@@ -177,7 +177,6 @@ div#container {
 	margin: 0 auto;
 	-moz-border-radius: 6px;
 	-webkit-border-radius: 6px;
-	border-right: 1px solid #e0e0e0;
 	border-bottom: 1px solid #e0e0e0;
 	background: #fff;
 	overflow: hidden;
@@ -1547,7 +1546,6 @@ div.post .tags {
 	float: left;
 }
 div.post .comments {
-	float: right;
 }
 div.post img {
 	margin-bottom: 15px;
@@ -1652,4 +1650,15 @@ div.comment-options {
 }
 .tickertext{
 	width: 150px;
+}
+
+.idea-content{
+	color:#888888;
+	font-size:18px;
+	line-height:1.3em;
+}
+div.post h2.idea-title a{
+	color: black;
+	line-height: 1em;
+	font-size: 36px;
 }
