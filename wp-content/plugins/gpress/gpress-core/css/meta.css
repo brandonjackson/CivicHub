@@ -82,3 +82,7 @@ table.gpress_meta_sidebar_table td.divider {
 	margin-top:20px;
 	padding-top:10px;
 }
+#gpress_advanced_hidden .uploadifyQueueItem {
+	width:89%;
+	padding:10 5%;
+}

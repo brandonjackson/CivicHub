@@ -1,9 +1,9 @@
 /* FRONT-END - PLACES */
 .gpress_mapcanvas img {
-	background:transparent !important;
-	background-color:transparent !important;
-	border:0 !important;
-	padding:0 !important;
+	background:transparent;
+	background-color:transparent;
+	border:none;
+	padding:;
 }
 .infobox_title {
 	color:#FFF;

@@ -28,13 +28,13 @@ register_post_type('idea', array(
 ));
 
 register_taxonomy(
-		'topic',		// internal name = machine-readable taxonomy name
-		'idea',		// object type = post, page, link, or custom post-type
+		'topic', // internal name = machine-readable taxonomy name
+		'idea', // object type = post, page, link, or custom post-type
 		array(
 			'hierarchical' => true,
 			'label' => 'Topic',	// the human-readable taxonomy name
 			'query_var' => true,	// enable taxonomy-specific querying
-			'rewrite' => array( 'slug' => 'topic' ),	// pretty permalinks for your taxonomy?
+			'rewrite' => array( 'slug' => 'ideas/topics' ),	// pretty permalinks for your taxonomy?
 		)
 );
 

@@ -22,6 +22,8 @@ $tppoptions_top_tabs = $tppo['top_tabs'];
 $tppoptions_sub_tabs = $tppo['sub_tabs'];
 
 do_action('tppo_before_form');
+$use_selects = true;
+$use_selects = apply_filters('tppo_use_selects', $use_selects);
 
 ?>
 	<link href="<?php echo TPPO_URL; ?>/css/style.css" rel="stylesheet" type="text/css" />
@@ -32,9 +34,10 @@ do_action('tppo_before_form');
 		if(!jQuery)
 			document.write('<sc'+'ript type="text/javascript" src="<?php echo TPPO_URL; ?>/js/jquery.js"></scri'+'pt>');
 	</script>
-	<script type="text/javascript" src="<?php echo TPPO_URL; ?>/js/ui-customised.js"></script>
 	<script type="text/javascript" src="<?php echo TPPO_URL; ?>/js/inputs.js"></script>
-	<script type="text/javascript" src="<?php echo TPPO_URL; ?>/js/selects.js"></script>
+    <?php if($use_selects) { ?>
+		<script type="text/javascript" src="<?php echo TPPO_URL; ?>/js/selects.js"></script>
+	<?php } ?>
 	<script type="text/javascript"> 
 		jQuery.fn.pause = function(duration) {
 			jQuery(this).animate({ dummy: 1 }, duration);
@@ -45,7 +48,11 @@ do_action('tppo_before_form');
 		jQuery(function(){
 			// Tabs
 			jQuery('.tpp_form_container #tabs').tabs({
-				   show: function(event, ui) { jQuery('select.tpp_dropdown').sSelect();},
+				   show: function(event, ui) { 
+				   			<?php if($use_selects) { ?>
+					   			jQuery('select.tpp_dropdown').sSelect();
+							<?php } ?>
+					},
 				   selected:0
 			});
 		});
@@ -116,7 +123,7 @@ do_action('tppo_before_form');
 											//Default Action
 											jQuery(".tpp_form_container .tab_content<?php echo $this_top_tab_name; ?>").hide(); //Hide all content
 											jQuery(".tpp_form_container ul.tabs<?php echo $this_top_tab_name; ?> li:first").addClass("active").show(); //Activate first tab
-											jQuery(".tpp_form_container .tab_content<?php echo $this_top_tab_name; ?>:first").show("fast", function() { jQuery('select.tpp_dropdown').sSelect(); }); //Show first tab content
+											jQuery(".tpp_form_container .tab_content<?php echo $this_top_tab_name; ?>:first").show("fast", function() { <?php if($use_selects) { ?> jQuery('select.tpp_dropdown').sSelect(); <?php } ?> }); //Show first tab content
 											
 											//On Click Event
 											jQuery(".tpp_form_container ul.tabs<?php echo $this_top_tab_name; ?> li").click(function() {

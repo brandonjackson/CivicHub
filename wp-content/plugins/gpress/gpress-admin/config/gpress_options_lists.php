@@ -61,5 +61,70 @@ $gpress_places_control_list = array(
 	'default' => __('DEFAULT - This attempts to show only what is needed to who needs it', 'gpress'),
 	'hide' => __('HIDE PLACES - This will ensure that all gPress Place control is only visible to Super Admins', 'gpress')
 );
+$bp_user_rights_list = array(
+	'individual' => __('<strong>INDIVIDUAL SETTINGS</strong><br />Each user can control their own settings...', 'gpress'),
+	'override' => __('<strong>SITEWIDE OVER-RIDE</strong><br />The default settings control all user settings...', 'gpress')
+);
+$geo_setting_styles_list = array(
+	
+	'_divider1' 				=> array(	'title' => '__________________________ PRIMARY COLORS', 									'description' => 'The only place presently using these styles are on the BuddyPress Geo-Settings page...'),
+	
+	'primary_bg' 				=> array(	'title' => 'Primary Background Color', 					'display' => '1|0|0',				'description' => 'Primary colors represent selected tabs and buttons...'),
+	'primary_border' 			=> array(	'title' => 'Primary Border Color', 						'display' => '1|0|0',				'description' => 'Primary colors represent selected tabs and buttons...'),
+	'primary_color' 			=> array(	'title' => 'Primary Font Color', 						'display' => '1|0|0',				'description' => 'Primary colors represent selected tabs and buttons...'),
+	'primary_bg_hover'			=> array(	'title' => 'Primary Background Color (on Hover)', 		'display' => '1|0|0',				'description' => 'Primary colors represent selected tabs and buttons...'),
+	'primary_border_hover'		=> array(	'title' => 'Primary Border Colour (on Hover)', 			'display' => '1|0|0',				'description' => 'Primary colors represent selected tabs and buttons...'),
+	'primary_color_hover'		=> array(	'title' => 'Primary Font Colour (on Hover)', 			'display' => '1|0|0',				'description' => 'Primary colors represent selected tabs and buttons...'),
+	
+	'_divider2' 				=> array(	'title' => '_______________________ SECONDARY COLORS', 									'description' => 'The only place presently using these styles are on the BuddyPress Geo-Settings page...'),
+	
+	'secondary_bg' 				=> array(	'title' => 'Secondary Background Color', 				'display' => '1|0|0',				'description' => 'Secondaries are un-selected tabs &amp input boxes...'),
+	'secondary_border' 			=> array(	'title' => 'Secondary Border Color', 					'display' => '1|0|0',				'description' => 'Secondaries are un-selected tabs &amp input boxes...'),
+	'secondary_color' 			=> array(	'title' => 'Secondary Font Color', 						'display' => '1|0|0',				'description' => 'Secondaries are un-selected tabs &amp input boxes...'),
+	'secondary_bg_hover'		=> array(	'title' => 'Secondary Background Color (on Hover)', 	'display' => '1|0|0',				'description' => 'Secondaries are un-selected tabs &amp input boxes...'),
+	'secondary_border_hover'	=> array(	'title' => 'Secondary Border Colour (on Hover)', 		'display' => '1|0|0',				'description' => 'Secondaries are un-selected tabs &amp input boxes...'),
+	'secondary_color_hover'		=> array(	'title' => 'Secondary Font Colour (on Hover)', 			'display' => '1|0|0',				'description' => 'Secondaries are un-selected tabs &amp input boxes...')
+	
+);
+$geo_setting_styles_default_list = array(
+								   
+	'primary_bg' => array(
+		'hex' => '#EEEEEE'
+	),
+	'primary_border' => array(
+		'hex' => '#DDDDDD'
+	),
+	'primary_color' => array(
+		'hex' => '#999999'
+	),
+	'primary_bg_hover' => array(
+		'hex' => '#EEEEEE'
+	),
+	'primary_border_hover' => array(
+		'hex' => '#CCCCCC'
+	),
+	'primary_color_hover' => array(
+		'hex' => '#666666'
+	),
+	'secondary_bg' => array(
+		'hex' => '#FFFFFF'
+	),
+	'secondary_border' => array(
+		'hex' => '#DDDDDD'
+	),
+	'secondary_color' => array(
+		'hex' => '#666666'
+	),
+	'secondary_bg_hover' => array(
+		'hex' => '#EEEEEE'
+	),
+	'secondary_border_hover' => array(
+		'hex' => '#DDDDDD'
+	),
+	'secondary_color_hover' => array(
+		'hex' => '#999999'
+	)
+
+);
 
 ?>

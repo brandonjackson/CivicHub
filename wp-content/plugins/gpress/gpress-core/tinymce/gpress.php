@@ -49,7 +49,7 @@ do_action('admin_init');
 		}
 		
 		if(window.tinyMCE) {
-			window.tinyMCE.execInstanceCommand('content', 'mceInsertContent', false, tag);
+			window.tinyMCE.execInstanceCommand('<?php $gpress_tinymce_textarea = 'content'; $gpress_tinymce_textarea = apply_filters('gpress_tinymce_textarea', $gpress_tinymce_textarea); echo $gpress_tinymce_textarea; ?>', 'mceInsertContent', false, tag);
 			tinyMCEPopup.editor.execCommand('mceRepaint');
 			tinyMCEPopup.close();
 		}

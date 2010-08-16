@@ -21,8 +21,6 @@ class GPRESS_FAV_PLACE_WIDGET extends WP_Widget {
 		$type = $instance['type'];
 		$zoom = $instance['zoom'];
 		$height = $instance['height'];
-		$icon = $instance['icon'];
-		$shadow = $instance['shadow'];
 		
 		if(empty($placeid)) {
 			$gpress_this_place_title = __('Favorite Place', 'gpress');
@@ -55,11 +53,7 @@ class GPRESS_FAV_PLACE_WIDGET extends WP_Widget {
 				$gpress_widget_places_place_id = $placeid;
 				$gpress_widget_places_place_title = '_gpress_widgets_places';
 				$gpress_widget_post_type = 'widget';
-				
 				$gpress_map_height = $instance['height'];
-				$gpress_icon_url = $instance['icon'];
-				$gpress_shadow_url = $instance['shadow'];
-				
 				$this_map_type = $instance['type'];
 				$this_map_zoom = $instance['zoom'];
 				
@@ -81,8 +75,6 @@ class GPRESS_FAV_PLACE_WIDGET extends WP_Widget {
 					'post_id' 		=> false,
 					'widget_id' 	=> $this->number,
 					'place_id' 		=> $gpress_widget_places_place_id,
-					'marker_icon' 	=> $gpress_icon_url,
-					'marker_shadow' => $gpress_shadow_url,
 					'marker_title' 	=> $gpress_widget_places_place_title,
 					'marker_url' 	=> false
 				);
@@ -105,8 +97,6 @@ class GPRESS_FAV_PLACE_WIDGET extends WP_Widget {
 		$instance['type'] = $new_instance['type'];
 		$instance['zoom'] = $new_instance['zoom'];
 		$instance['height'] = $new_instance['height'];
-		$instance['icon'] = $new_instance['icon'];
-		$instance['shadow'] = $new_instance['shadow'];
 
 		return $instance;
 	}
@@ -155,14 +145,6 @@ class GPRESS_FAV_PLACE_WIDGET extends WP_Widget {
                 <label><?php echo __('Overwrite default height for this map:', 'gpress'); ?></label>
                 <input type="text" name="<?php echo $this->get_field_name( 'height' ); ?>" value="<?php echo $instance['height']; ?>" style="width:100%;" />
                 <p class="advanced_description"><?php echo __('Numbers only (defaults to', 'gpress'); ?> <?php echo $default_map_height; ?>)</p>
-                <span class="advanced_divider"></span>
-                <label><?php echo __('Custom icon URL for this map:', 'gpress'); ?></label>
-                <input type="text" name="<?php echo $this->get_field_name( 'icon' ); ?>" value="<?php echo $instance['icon']; ?>" style="width:100%;" />
-                <p class="advanced_description"><?php echo __('This imaage should be 42px X 43px', 'gpress'); ?></p>
-                <span class="advanced_divider"></span>
-                <label><?php echo __('Custom shadow URL for this map:', 'gpress'); ?></label>
-                <input type="text" name="<?php echo $this->get_field_name( 'shadow' ); ?>" value="<?php echo $instance['shadow']; ?>" style="width:100%;" />
-                <p class="advanced_description"><?php echo __('This imaage should be 42px X 43px', 'gpress'); ?></p>
             </div>
         </div>
         

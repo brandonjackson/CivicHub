@@ -13,7 +13,7 @@ Template Name: Ideas Archive Page
 
 		<div class="page" id="blog-archives">
 
-			<h3 class="pagetitle"><?php printf( __( 'You are browsing the archive for %1$s.', 'buddypress' ), wp_title( false, false ) ); ?></h3>
+			<h3 class="pagetitle"><?php printf( __( '%1$s', 'buddypress' ), wp_title( false, false ) ); ?></h3>
 
 			<?php query_posts('post_type=idea'); 
 			  		if ( have_posts() ) : ?>

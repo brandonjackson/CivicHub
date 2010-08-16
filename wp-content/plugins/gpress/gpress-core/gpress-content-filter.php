@@ -10,6 +10,7 @@ function gpress_content_filter($content) {
 	$gpress_post_type = $post->post_type;
 	$gpress_post_id = $post->ID;
 	$gpress_post_title = $post->post_title;	
+	//echo '$gpress_post_type = '.$gpress_post_type.''; exit;
 
 	// gPress Options
 	$credits_for_posts = $tppo->get_tppo('credits_for_posts', 'blogs');
@@ -91,7 +92,6 @@ function gpress_content_filter($content) {
 			'marker_title' 	=> $gpress_post_title,
 			'marker_url' 	=> false
 		);
-		
 	}	
 	
 	$show_map = true;

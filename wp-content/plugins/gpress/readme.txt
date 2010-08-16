@@ -2,21 +2,21 @@
 Contributors: msmalley, jimmynguyc, pressbuddies
 Tags: buddypress, geotagging, geo-tagging, geo, gpress, gmaps, google maps, google, maps, map, mapping
 Requires at least: WordPress 3.0 / BuddyPress 1.2.5.2
-Tested up to: WordPress 3.0 / BuddyPress 1.2.5.2
-Stable tag: 0.2.4.1
+Tested up to: WordPress 3.0.1 / BuddyPress 1.2.5.2
+Stable tag: 0.2.4.3.1
 Donate link: http://pressbuddies.com/sponsorships/
 
 gPress adds new geo-relevant layers to the press platforms so you can geo-tag your surroundings or develop your own location-based services...
 
 == Description ==
 
-gPress adds new geo-relevant layers to WordPress, allowing you to create your own location-based services or to keep track of your own personal geo-tagged journies. Even in its beta state, you can presently geo-tag posts using native WordPress Mobile Applications, or create new geo-located places using custom post types, featured images and descriptions, add geoRSS functionality and integrated with BuddyPress and Foursquare...
+gPress adds new geo-relevant layers to WordPress, allowing you to create your own location-based services or to keep track of your own personal geo-tagged journies. Even in its beta state, you can presently geo-tag posts using native WordPress Mobile Applications, or create new geo-located places using custom post types, featured images and descriptions, add geoRSS functionality and integrate with BuddyPress and Foursquare...
 
 For a live demonstration; please visit our [Demo Site](http://smalley.my/gpress/)
 
-The future of gPress is one where you can develop your own completely customizable, fully-interactive and entirely immersible geo-relevant social-layers using combinations of movements, actions and consequences whilst geo-tagging, trailing and interacting with locations, people and objects. Create new geo-relevant states of social-roleplay by defining language and lingo, customizing context and integrating with other social-networks.
+The future of gPress is one where you can develop your own completely customizable, fully-interactive and entirely immersible geo-relevant social-layers using combinations of movements, actions and consequences whilst geo-tagging, trailing and interacting with locations, people and objects. Create new geo-relevant states of social-roleplay by defining language and lingo, customizing context and integrating with other social-networks...
 
-However, to-date, the following milestones have already been completed:
+However, to-date, ONLY the following milestones have been completed:
 
 1. 	Places (with Image + Description)
 2. 	Types of Places and Place Tags
@@ -42,10 +42,19 @@ However, to-date, the following milestones have already been completed:
 22. Foursquare Sidebar Widgets
 23. Check for CSS, PHP and JS in "custom" Folder
 24. Complete Customisation of Language and Lingo
+25. Automated Language Selection via WPLANG Definition
+26. Introduced Front-End BuddyPress User Options Framework
+27. Introduced Easy WYSIWYG Styling Module
+28. Easy Browsing (PC) and Upload for Custom Markers
+29. Add User Location (BuddyPress Only) at Sign-Up
 
 You can also check-out our [Roadmap](http://wordpress.org/extend/plugins/gpress/other_notes/) and [Change-Log](http://wordpress.org/extend/plugins/gpress/changelog/)
 
-For more information; please visit us at [PressBuddies](http://pressbuddies.com/projects/geopress/)
+To visit or support the team behind gPress, please visit us at [PressBuddies](http://pressbuddies.com/)
+
+For more community particpation; please visit us at [BuddyPress](http://buddypress.org/community/groups/gpress/activity/)
+
+Our OFFICIAL support [FORUMS](http://buddypress.org/community/groups/gpress/forum/) are on the BuddyPress.org site.
 
 == Installation ==
 
@@ -80,6 +89,8 @@ To be honest, at this point, we have ONLY tested the plugin using the default Tw
 
 gPress and Geolocation cannot be used together. gPress does everything Geolocation does, and more, but the two of them cannot be used together. Other than that, we have not yet had any reports of other problems, but please let us know if you run into any...
 
+If you have any additional questions, please visit our [SUPPORT FORUMS](http://buddypress.org/community/groups/gpress/forum/) at BuddyPress.
+
 == Screenshots ==
 
 1. This is a demonstration of the administrative panel for adding new places...
@@ -87,10 +98,41 @@ gPress and Geolocation cannot be used together. gPress does everything Geolocati
 
 == Upgrade Notice ==
 
-= 0.2.4.1 =
-CRITICAL UPDATE - FIXED IS SET AND IE PROBLEMS
+= 0.2.4.3.1 =
+MINOR UPDATES - Resolved Minore Bug and Move Location to End of BuddyPress Sign-Up Form
 
 == Changelog ==
+
+= 0.2.4.3.1 =
+* MOVED Location at Sign-Up to End of Form
+* REMOVED Double-Instance of UI.js from Forms
+
+= 0.2.4.3 =
+* RESOLVED Conflict with jQuery UI in gPress Options
+* REMOVED Geo-Settings Page IF Not Needed (Over-Ride)
+* ADDED Easy Browsing (from PC) and Upload of Markers
+* ADDED Options for Allowing User Location at Sign-Up
+
+= 0.2.4.2.3 =
+* FIXED Lots of Little Bugs :-)
+
+= 0.2.4.2.2 =
+* IMPROVED Geo-Settings Map Initialization
+* RESOLVED Conflict with Chrome and gPress Options
+* RESOLVED Conflict with Contact Form 7 and gPress
+
+= 0.2.4.2.1 =
+* FIXED FATAL ERROR for NON BuddyPress Environments
+
+= 0.2.4.2 =
+* IMPROVED Language - Automatted via WPLANG Definitions
+* ADDED Filter for Switching ID of WYSIWYG Editor
+* NEW Front-End BuddyPress User Settings Framework
+* NEW User Controls for Individual Profile Options
+* NEW Super Admin Controls for Controlling User Controls
+
+= 0.2.4.1.1 =
+* FIXED bug with Un-Escaped Titles / Addresses
 
 = 0.2.4.1 =
 * FIXED "IS SET" PROBLEM
@@ -276,7 +318,86 @@ CRITICAL UPDATE - FIXED IS SET AND IE PROBLEMS
 
 == The Neverending Roadmap ==
 
-gPress will ultimately consist of several CORE modules and also be Buddypress compatible, but for now, with the limited free time and resources we have to work on this personal project, we are focusing on the following key-components:
+gPress will ultimately consist of several CORE modules, but for now, we are focusing on the following key-components:
+
+== Scheduled for Next Release ( v0.2.4.3.1 ) ==
+1. BUG Fixes from 0.2.4.3+
+
+== Highest Priority - planned for gPress v0.2.4+ ==
+1. Re-Style gPress Options to LOOK like WP (inc UPLOAD in Sidebars)
+2. Use TPPO Top-Tabs as WP Sidebar Tabs ...?
+3. Improved User Control / Styling for Marker Windows
+4. Improved PLACE Array (allowing for sets, types and tags)
+
+== Highest Priority - planned for gPress v0.2.5+ ==
+1. Improved Widgets (Drop-Down for Fav Place & Custom Markers)
+2. Better Options for Displaying Maps (jQuery Dialog)
+3. Additional BuddyPress Integration as follows:
+4. Geo-Tagged Groups / Maps (with Group Members)
+5. Show All Users / Same Array for Directories
+6. Show All Friends on Friend Page
+7. New BP Directory for Places
+8. Customised Place Information (with Building Blocks)
+
+== Highest Priority - planned for gPress v0.2.6+ ==
+1. Introduce New Geo-Tagged Components as follows:
+2. Geo-Tagged Blogs
+3. Geo-Tagged Comments
+4. Geo-Tagged Media
+5. Geo-Tagged Activity Streams
+
+== Highest Priority - planned for gPress v0.2.7+ ==
+1. Seperate gPress Plugins (4sq, etc) from Core
+2. Further Social-Media Integration as follows:
+3. Foursquare Venues + Tips (GET and PUSH)
+4. Foursquare PUSH Functionality (Create Venues + Checkins)
+5. Twitter / Facebook Integration
+
+== Highest Priority - planned for gPress v0.2.8+ ==
+1. BP Members, Groups and Blogs Directory Maps
+2. Search Functionality for Front-End Maps
+3. Search Functionality as Option for Widgets
+4. Template Control of Map (Open, Closed, Sidebar)
+5. Importing / Exporting Locations (CSV)
+6. Easy Custom Styling / Marker Management
+
+== Highest Priority - planned for gPress v0.2.9+ ==
+1. Showcase Content Based on Location
+2. Integration with Google Places (GET / PUSH)
+3. Add Places to Posts / Activity Streams
+
+== Future Modules Include - gPress v0.3+ ==
+1. Action Hooks and Filters with Documentation for Developers
+2. Test NEW Hooks and Filters by Making Gravity Forms Plugin
+3. Movements (move with linear, non-linear and stealth motion)
+4. Actions (interact with locations, people and objects)
+5. FULL Mobile Compatability
+
+== Future Modules Include - gPress v0.4+ ==
+1. Consequences (customize the way things interact with each other)
+
+== Future Modules Include - gPress v0.5+ ==
+1. Markers (leave references points, check-points and crumbs)
+
+== Future Modules Include - gPress v0.6+ ==
+1. Locations (places can be public, private or communal)
+
+== Future Modules Include - gPress v0.7+ ==
+1. People (relationships with acquaintances, strangers and characters)
+
+== Future Modules Include - gPress v0.8+ ==
+1. Objects (collect and trade rewards, commodities and equipment)
+
+== Future Modules Include - gPress v0.9+ ==
+1. Download Trail History as KML File
+
+== gPress v1+ ==
+1. Launch standalone website promoting gPress
+2. Start developing web-service for hosted gPress installs
+3. Develop gPress plugin and API frameworks
+4. Develop method for networking different geo-environments
+
+These are the items we have ALREADY completed:
 
 == Milestones Already Completed ==
 1. 	Places (with Image + Description)
@@ -303,47 +424,8 @@ gPress will ultimately consist of several CORE modules and also be Buddypress co
 22. Foursquare Sidebar Widgets
 23. Check for CSS, PHP and JS in "custom" Folder
 24. Complete Customisation of Language and Lingo
-
-== Highest Priority - planned for gPress v0.2+ ==
-1.  Add Another TPPO in Front-End for BP "USER" Options
-2.  Improved Widgets (Drop-Down for Fav Place)
-3.  Add Spanish Version and WP_LANG Checks
-4.  Better Options for Displaying Maps (jQuery Dialog)
-5.  Additional BuddyPress Integration as follows:
-6.  Group Maps (with Group Members)
-7.  Introduce New Geo-Tagged Components as follows:
-8.  Geo-Tagged Blogs
-9.  Geo-Tagged Comments
-10. Geo-Tagged Photos
-11. Geo-Tagged Activity Streams
-12. Further Social-Media Integration as follows:
-13. Foursquare Venues + Tips (GET and PUSH)
-14. Foursquare PUSH Functionality (Create Venues + Checkins)
-15. Twitter / Facebook Integration
-16. BP Members, Groups and Blogs Directory Maps
-17. Search Functionality for Front-End Maps
-18. Search Functionality as Option for Widgets
-19. Template Control of Map (Open, Closed, Sidebar)
-20. Importing / Exporting Locations (CSV)
-21. Easy Custom Styling / Marker Management
-22. Showcase Content Based on Location
-23. Integration with Google Places (GET / PUSH)
-24. Add Places to Posts / Activity Streams
-
-== Future Modules Include - gPress v0.3+ ==
-0. Seperate gPress Plugins (4sq, etc) from Core
-1. Action Hooks and Filters with Documentation for Developers
-2. Movements (move with linear, non-linear and stealth motion)
-3. Actions (interact with locations, people and objects)
-4. Consequences (customize the way things interact with each other)
-5. Markers (leave references points, check-points and crumbs)
-6. Locations (places can be public, private or communal)
-7. People (relationships with acquaintances, strangers and characters)
-8. Objects (collect and trade rewards, commodities and equipment)
-9. Download Trail History as KML File
-
-== gPress v1+ ==
-1. Launch standalone website promoting gPress
-2. Start developing web-service for hosted gPress installs
-3. Develop gPress plugin and API frameworks
-4. Develop method for networking different geo-environments
+25. Automated Language Selection via WPLANG Definition
+26. Introduced Front-End BuddyPress User Options Framework
+27. Introduced Easy WYSIWYG Styling Module
+28. Easy Browsing (PC) and Upload for Custom Markers
+29. Add User Location (BuddyPress Only) at Sign-Up

@@ -30,21 +30,23 @@ function get_users_blog_posts( $user_id = 1, $num_per_blog = 1, $orderby = 'date
 			switch_to_blog($blog_id);
 				$get_posts = get_posts('orderby='.$orderby.'&numberposts='.$num_per_blog);
 				foreach($get_posts as $key => $the_post) {
-					$post_id = $the_post->ID;
-					$posts[$i]['blog_id'] = $blog_id;
-					$posts[$i]['post_id'] = $post_id;
-					$posts[$i]['post_date'] = $the_post->post_date;
-					$posts[$i]['post_title'] = $the_post->post_title;
-					$posts[$i]['post_url'] = $the_post->guid;
-					$posts[$i]['post_type'] = $the_post->post_type;
-					$geo_latlng = ''.get_post_meta($post_id,'geo_latitude',TRUE).', '.get_post_meta($post_id,'geo_longitude',TRUE).'';
-					$posts[$i]['geo_public'] = get_post_meta($post_id,'geo_public',TRUE);
-					$posts[$i]['geo_latlng'] = $geo_latlng;
-					$i++;
+					$author_id = $the_post->post_author;
+					if($author_id = $user_id) {
+						$post_id = $the_post->ID;
+						$posts[$i]['blog_id'] = $blog_id;
+						$posts[$i]['post_id'] = $post_id;
+						$posts[$i]['post_date'] = $the_post->post_date;
+						$posts[$i]['post_title'] = $the_post->post_title;
+						$posts[$i]['post_url'] = $the_post->guid;
+						$posts[$i]['post_type'] = $the_post->post_type;
+						$geo_latlng = ''.get_post_meta($post_id,'geo_latitude',TRUE).', '.get_post_meta($post_id,'geo_longitude',TRUE).'';
+						$posts[$i]['geo_public'] = get_post_meta($post_id,'geo_public',TRUE);
+						$posts[$i]['geo_latlng'] = $geo_latlng;
+						$i++;
+					}
 				}
 			restore_current_blog();
 		endforeach;
-		return $posts;
 	}else{
 		// STANDARD WP
 		$get_posts = get_posts('orderby='.$orderby.'&numberposts='.$num_per_blog);

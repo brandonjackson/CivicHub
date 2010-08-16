@@ -1,36 +1,26 @@
 <?php
 
-function initialize_georss() {
-	
-	global $tppo;
-	$use_georss = $tppo->get_tppo('use_georss', 'blogs');
-	
-	if($use_georss == 'enabled') {
-		
-		// RSS 2
-		add_action('rss2_ns', 'gpress_rss_ns');
-		add_action('rss2_head', 'gpress_rss_header');
-		add_action('rss2_item', 'gpress_rss_latlng'); 
-		add_filter('the_excerpt_rss', 'gpress_rss_content'); 
-		
-		// RSS 1
-		add_action('rss_head', 'gpress_rss_header');
-		add_action('rss_item', 'gpress_rss_latlng'); 
-		
-		// RSS RDF
-		add_action('rdf_ns', 'gpress_rss_ns');
-		add_action('rdf_header', 'gpress_rss_header');
-		add_action('rdf_item', 'gpress_rss_latlng'); 
-		
-		// RSS ATOM
-		add_action('atom_ns', 'gpress_rss_ns');
-		add_action('atom_head', 'gpress_rss_header');
-		add_action('atom_entry', 'gpress_rss_latlng'); 
-		
-	}
-	//add_action('commentrss2_item', 'geo_points_comments'); 
+// GEO-RSS
+global $tppo;
+$use_georss = $tppo->get_tppo('use_georss', 'blogs');
+if($use_georss == 'enabled') {
+	// RSS 2
+	add_action('rss2_ns', 'gpress_rss_ns');
+	add_action('rss2_head', 'gpress_rss_header');
+	add_action('rss2_item', 'gpress_rss_latlng'); 
+	add_filter('the_excerpt_rss', 'gpress_rss_content'); 
+	// RSS 1
+	add_action('rss_head', 'gpress_rss_header');
+	add_action('rss_item', 'gpress_rss_latlng'); 
+	// RSS RDF
+	add_action('rdf_ns', 'gpress_rss_ns');
+	add_action('rdf_header', 'gpress_rss_header');
+	add_action('rdf_item', 'gpress_rss_latlng'); 
+	// RSS ATOM
+	add_action('atom_ns', 'gpress_rss_ns');
+	add_action('atom_head', 'gpress_rss_header');
+	add_action('atom_entry', 'gpress_rss_latlng'); 
 }
-add_action( 'plugins_loaded', 'initialize_georss', 5 );
 
 function gpress_rss_ns() {
 	echo 'xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:georss="http://www.georss.org/georss"';

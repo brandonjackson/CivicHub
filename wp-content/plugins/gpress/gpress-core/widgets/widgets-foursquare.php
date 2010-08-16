@@ -50,6 +50,58 @@ class gpress_foursquare_WIDGET extends WP_Widget {
 				
 			} else {
 				
+				// gPress Foursquare Your Markers
+				$marker_4sqyou_icon = $tppo->get_tppo('marker_4sqyou_icon', 'blogs');
+				$marker_4sqyou_shadow = $tppo->get_tppo('marker_4sqyou_shadow', 'blogs');
+				$marker_4sqyou_icon_file = $marker_4sqyou_icon['filename'];
+				$marker_4sqyou_icon_url = $marker_4sqyou_icon['fileurl'];
+				$marker_4sqyou_shadow_file = $marker_4sqyou_shadow['filename'];
+				$marker_4sqyou_shadow_url = $marker_4sqyou_shadow['fileurl'];
+				if(!empty($marker_4sqyou_icon_url)) {
+					$default_marker_icon_4sqyou = $marker_4sqyou_icon_url;
+				}else{
+					if(!empty($marker_4sqyou_icon_file)) {
+						$default_marker_icon_4sqyou = GPRESS_URL.'/gpress-admin/fieldtypes/image_upload/uploads/'.$marker_4sqyou_icon_file;
+					} else {
+						$default_marker_icon_4sqyou = GPRESS_URL.'/gpress-core/images/markers/4sq.png';
+					}
+				}
+				if(!empty($marker_4sqyou_shadow_url)) {
+					$default_marker_shadow_4sqyou = $marker_4sqyou_shadow_url;
+				}else{
+					if(!empty($marker_4sqyou_shadow_file)) {
+						$default_marker_shadow_4sqyou = GPRESS_URL.'/gpress-admin/fieldtypes/image_upload/uploads/'.$marker_4sqyou_shadow_file;
+					} else {
+						$default_marker_shadow_4sqyou = GPRESS_URL.'/gpress-core/images/markers/bg.png';
+					}
+				}
+				
+				// gPress Foursquare Friends Markers
+				$marker_4sqfriends_icon = $tppo->get_tppo('marker_4sqfriends_icon', 'blogs');
+				$marker_4sqfriends_shadow = $tppo->get_tppo('marker_4sqfriends_shadow', 'blogs');
+				$marker_4sqfriends_icon_file = $marker_4sqfriends_icon['filename'];
+				$marker_4sqfriends_icon_url = $marker_4sqfriends_icon['fileurl'];
+				$marker_4sqfriends_shadow_file = $marker_4sqfriends_shadow['filename'];
+				$marker_4sqfriends_shadow_url = $marker_4sqfriends_shadow['fileurl'];
+				if(!empty($marker_4sqfriends_icon_url)) {
+					$default_marker_icon_4sqfriend = $marker_4sqfriends_icon_url;
+				}else{
+					if(!empty($marker_4sqfriends_icon_file)) {
+						$default_marker_icon_4sqfriend = GPRESS_URL.'/gpress-admin/fieldtypes/image_upload/uploads/'.$marker_4sqfriends_icon_file;
+					} else {
+						$default_marker_icon_4sqfriend = GPRESS_URL.'/gpress-core/images/markers/4sq.png';
+					}
+				}
+				if(!empty($marker_4sqfriends_shadow_url)) {
+					$default_marker_shadow_4sqfriend = $marker_4sqfriends_shadow_url;
+				}else{
+					if(!empty($marker_4sqfriends_shadow_file)) {
+						$default_marker_shadow_4sqfriend = GPRESS_URL.'/gpress-admin/fieldtypes/image_upload/uploads/'.$marker_4sqfriends_shadow_file;
+					} else {
+						$default_marker_shadow_4sqfriend = GPRESS_URL.'/gpress-core/images/markers/bg.png';
+					}
+				}
+				
 				$foursquare_array_you = array();
 				$foursquare_array_friends = array();
 				
@@ -135,6 +187,8 @@ class gpress_foursquare_WIDGET extends WP_Widget {
 				}
 				$foursquare_array_you[$four_your_checkin_id]['is_you'] = 'yes';
 				$foursquare_array_you[$four_your_checkin_id]['four_type'] = 'person';
+				$foursquare_array_you[$four_your_checkin_id]['icon'] = $default_marker_icon_4sqyou;
+				$foursquare_array_you[$four_your_checkin_id]['shadow'] = $default_marker_shadow_4sqyou;
 				
 				$foursquare_array_friends = array();
 				$four_friends_array = tpp4sq_checkins(false, false, false);
@@ -208,15 +262,10 @@ class gpress_foursquare_WIDGET extends WP_Widget {
 							}
 							$foursquare_array_friends[$four_friend_checkin_id]['is_you'] = 'no';
 							$foursquare_array_friends[$four_friend_checkin_id]['four_type'] = 'person';
+							$foursquare_array_friends[$four_friend_checkin_id]['icon'] = $default_marker_icon_4sqfriend;
+							$foursquare_array_friends[$four_friend_checkin_id]['shadow'] = $default_marker_shadow_4sqfriend;
 						}
 					}
-					
-					/*
-					echo '<pre>';
-					print_r($foursquare_array_friends);					
-					print_r($four_friends_array);
-					echo '</pre>'; exit;
-					*/
 					
 					if($you == 'SHOWYOU') {
 						$four_you = true;

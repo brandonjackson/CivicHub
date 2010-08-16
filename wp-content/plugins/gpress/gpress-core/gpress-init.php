@@ -34,6 +34,11 @@ function scripts_for_admin_pages() {
 		wp_register_script( 'editor' , null, 'jquery');
 	}
 	global $pagenow;
+	if($pagenow == 'admin.php') {
+		wp_deregister_script( 'jquery-ui-tabs' );
+		wp_register_script( 'jquery-ui', GPRESS_URL.'/gpress-admin/js/ui-customised.js');
+		wp_enqueue_script('jquery-ui');
+	}
 	switch($pagenow){
 		case "post-new.php":
 		case "widgets.php":
@@ -58,6 +63,7 @@ function scripts_for_theme_pages() {
 	
 	global $tppo;
 	$places_taxonomy = __( 'place', 'gpress' );
+	$gpress_version_number = $tppo->get_tppo('gpress_version_number', 'sitewide');
 	$home_loop = $tppo->get_tppo('home_loop', 'blogs');
 	$home_loop_method = $tppo->get_tppo('home_loop_method', 'blogs');
 	if(empty($home_loop)) {
@@ -71,27 +77,7 @@ function scripts_for_theme_pages() {
 		
 		if($home_loop == 'BOTH') {
 			if(is_home()) {
-				global $wpdb, $wp_query;
-
-				/* EXAMPLE CODE FOR WPML CUSTOM LOOPS
-				$results = $wpdb->get_results("
-				SELECT {$wpdb->prefix}posts.*
-				FROM {$wpdb->prefix}posts
-				JOIN {$wpdb->prefix}icl_translations t
-				ON {$wpdb->prefix}posts.ID = t.element_id
-				AND t.element_type = 'post_place'
-				AND t.element_type = 'post_post'
-				JOIN {$wpdb->prefix}icl_languages l
-				ON t.language_code=l.code
-				AND l.active=1
-				WHERE {$wpdb->prefix}posts.post_type = 'place'
-				AND {$wpdb->prefix}posts.post_type = 'post'
-				AND {$wpdb->prefix}posts.post_status = 'publish'
-				AND t.language_code='{$lang}'
-				ORDER BY {$wpdb->prefix}posts.post_title ASC
-				");
-				END OF CUSTOM CODE EXAMPLE */
-				
+				global $wpdb, $wp_query;				
 				query_posts(
 					array_merge(
 						array('post_type' => array('post', $places_taxonomy)),
@@ -118,8 +104,43 @@ function scripts_for_theme_pages() {
 	
 	/* NEED TO BETTER ENQUEUE THIS LOT */
 	?>
+
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+	
+		/* RUNNING GPRESS_VERSION = GPRESS_VERSION; ?> */
+		/* LAST UPDATED OPTIONS IN VERSION = $gpress_version_number; ?> */
+		
+		jQuery.belowthefold = function(element, settings) {
+			var fold = jQuery(element).parents(settings.container).height() + jQuery(element).parents(settings.container).scrollTop();
+			return fold <= jQuery(element).position().top - settings.threshold;
+		};
+		
+		jQuery.rightoffold = function(element, settings) {
+			var fold = jQuery(element).parents(settings.container).width() + jQuery(element).parents(settings.container).scrollLeft();
+			return fold <= jQuery(element).position().left - settings.threshold;
+		};
+			
+		jQuery.abovethetop = function(element, settings) {
+			var fold = jQuery(element).parents(settings.container).scrollTop();
+			return fold >= jQuery(element).position().top + settings.threshold  + jQuery(element).height();
+		};
+		
+		jQuery.leftofbegin = function(element, settings) {
+			var fold = jQuery(element).parents(settings.container).scrollLeft();
+			return fold >= jQuery(element).position().left + settings.threshold + jQuery(element).width();
+		};
+		
+		var alreadyInit = new Array()
+		function array_find(array,item){
+			for(var i=0;i<array.length;i++){
+				if(item == array[i])
+					return true;
+			}	
+			return false;
+		}
+	</script>
     <?php
 }
 

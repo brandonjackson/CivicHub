@@ -5,22 +5,17 @@ define('TPPO_URL', GPRESS_URL."/gpress-admin");
 define('TPPO_FIELDTYPES_PATH',dirname(__FILE__).'/fieldtypes');
 
 $notforphp4 = array( '4sq.php' );
-
-function initialize_gpress_tppo_classes() {
 	
-	if ($handle = opendir(TPPO_FIELDTYPES_PATH)) {
-		/* This is the correct way to loop over the directory. */
-		while (false !== ($file = readdir($handle))) {
-			if($file != "." && $file != ".." && !is_dir(TPPO_FIELDTYPES_PATH."/".$file)){
-				if(phpversion() >= 5 || !in_array($file,$notforphp4))
-					require_once(TPPO_FIELDTYPES_PATH."/".$file);
-			}
+if ($handle = opendir(TPPO_FIELDTYPES_PATH)) {
+	/* This is the correct way to loop over the directory. */
+	while (false !== ($file = readdir($handle))) {
+		if($file != "." && $file != ".." && !is_dir(TPPO_FIELDTYPES_PATH."/".$file)){
+			if(phpversion() >= 5 || !in_array($file,$notforphp4))
+				require_once(TPPO_FIELDTYPES_PATH."/".$file);
 		}
-		closedir($handle);
 	}
-
+	closedir($handle);
 }
-add_action( 'plugins_loaded', 'initialize_gpress_tppo_classes', 1 );
 
 if(!class_exists('TPPOptions')){
 	class TPPOptions {

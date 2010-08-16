@@ -41,7 +41,7 @@ do_action('admin_init');
 		tag = '[gpress map_id="_foursquare"'+four_you+''+four_friends+']';
 		
 		if(window.tinyMCE) {
-			window.tinyMCE.execInstanceCommand('content', 'mceInsertContent', false, tag);
+			window.tinyMCE.execInstanceCommand('<?php $gpress4sq_tinymce_textarea = 'content'; $gpress4sq_tinymce_textarea = apply_filters('gpress4sq_tinymce_textarea', $gpress4sq_tinymce_textarea); echo $gpress4sq_tinymce_textarea; ?>', 'mceInsertContent', false, tag);
 			tinyMCEPopup.editor.execCommand('mceRepaint');
 			tinyMCEPopup.close();
 		}

@@ -166,7 +166,7 @@ google.maps.event.addDomListener(window, 'load', initialize<?php echo $map_id; ?
 </div>
 </div>
 
-<div class="gmaps_meta_boxes other_stuff<?php echo $map_id; ?> gpress_otherstuff" style="display:none !important;">
+<div class="gpress_meta_boxes other_stuff<?php echo $map_id; ?> gpress_otherstuff" style="display:none !important;">
     <div id="infoPanel<?php echo $map_id; ?>" class="gpress_infopanel">
         <div id="leftColumn<?php echo $map_id; ?>" class="gpress_leftcolumn">
             <b>Closest address:</b>

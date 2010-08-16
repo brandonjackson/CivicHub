@@ -4,16 +4,105 @@ function gpress_geoform($map_id, $map_type, $map_zoom, $map_position, $is_empty,
 	
 	global $post, $tppo;
  
-	// using an underscore, prevents the meta variable
-	// from showing up in the custom fields section
 	$meta = get_post_meta($post->ID,$map_id,TRUE);
+	$gpress_post_type = $post->post_type;
 	$geo_latitude = get_post_meta($post->ID,'geo_latitude',TRUE);
 	$geo_longitude = get_post_meta($post->ID,'geo_longitude',TRUE);
 	$geo_latlng = ''.$geo_latitude.', '.$geo_longitude.'';
 	
 	$this_map_height = $meta['height'];
-	$this_map_icon = $meta['icon'];
-	$this_map_shadow = $meta['shadow'];
+	
+	// gPress Post Markers
+	$marker_posts_icon = $tppo->get_tppo('marker_posts_icon', 'blogs');
+	$marker_posts_shadow = $tppo->get_tppo('marker_posts_shadow', 'blogs');
+	$marker_posts_icon_file = $marker_posts_icon['filename'];
+	$marker_posts_icon_url = $marker_posts_icon['fileurl'];
+	$marker_posts_shadow_file = $marker_posts_shadow['filename'];
+	$marker_posts_shadow_url = $marker_posts_shadow['fileurl'];
+	if(!empty($marker_posts_icon_url)) {
+		$default_marker_icon_post = $marker_posts_icon_url;
+	}else{
+		if(!empty($marker_posts_icon_file)) {
+			$default_marker_icon_post = GPRESS_URL.'/gpress-admin/fieldtypes/image_upload/uploads/'.$marker_posts_icon_file;
+		} else {
+			$default_marker_icon_post = GPRESS_URL.'/gpress-core/images/markers/post.png';
+		}
+	}
+	if(!empty($marker_posts_shadow_url)) {
+		$default_marker_shadow_post = $marker_posts_shadow_url;
+	}else{
+		if(!empty($marker_posts_shadow_file)) {
+			$default_marker_shadow_post = GPRESS_URL.'/gpress-admin/fieldtypes/image_upload/uploads/'.$marker_posts_shadow_file;
+		} else {
+			$default_marker_shadow_post = GPRESS_URL.'/gpress-core/images/markers/bg.png';
+		}
+	}
+	
+	// gPress Place Markers
+	$marker_places_icon = $tppo->get_tppo('marker_places_icon', 'blogs');
+	$marker_places_shadow = $tppo->get_tppo('marker_places_shadow', 'blogs');
+	$marker_places_icon_file = $marker_places_icon['filename'];
+	$marker_places_icon_url = $marker_places_icon['fileurl'];
+	$marker_places_shadow_file = $marker_places_shadow['filename'];
+	$marker_places_shadow_url = $marker_places_shadow['fileurl'];
+	if(!empty($marker_places_icon_url)) {
+		$default_marker_icon_place = $marker_places_icon_url;
+	}else{
+		if(!empty($marker_places_icon_file)) {
+			$default_marker_icon_place = GPRESS_URL.'/gpress-admin/fieldtypes/image_upload/uploads/'.$marker_places_icon_file;
+		} else {
+			$default_marker_icon_place = GPRESS_URL.'/gpress-core/images/markers/place.png';
+		}
+	}
+	if(!empty($marker_places_shadow_url)) {
+		$default_marker_shadow_place = $marker_places_shadow_url;
+	}else{
+		if(!empty($marker_places_shadow_file)) {
+			$default_marker_shadow_place = GPRESS_URL.'/gpress-admin/fieldtypes/image_upload/uploads/'.$marker_places_shadow_file;
+		} else {
+			$default_marker_shadow_place = GPRESS_URL.'/gpress-core/images/markers/bg.png';
+		}
+	}
+	
+	// CHECK FOR CUSTOM AD-HOC MARKERS
+	$adhoc_marker_icon_url = $meta['icon_url'];
+	$adhoc_marker_icon_file = $meta['icon_file'];
+	$adhoc_marker_shadow_url = $meta['shadow_url'];
+	$adhoc_marker_shadow_file = $meta['shadow_file'];
+	if(!empty($adhoc_marker_icon_url)) {
+		$adhoc_marker_icon = $adhoc_marker_icon_url;
+	}else{
+		if(!empty($adhoc_marker_icon_file)) {
+			$adhoc_marker_icon = GPRESS_URL.'/gpress-admin/fieldtypes/image_upload/uploads/'.$adhoc_marker_icon_file;
+		}
+	}
+	if(!empty($adhoc_marker_shadow_url)) {
+		$adhoc_marker_shadow = $adhoc_marker_shadow_url;
+	}else{
+		if(!empty($adhoc_marker_shadow_file)) {
+			$adhoc_marker_shadow = GPRESS_URL.'/gpress-admin/fieldtypes/image_upload/uploads/'.$adhoc_marker_shadow_file;
+		}
+	}
+	
+	// Define which Markers to use
+	if($gpress_post_type == 'post') {
+		$default_marker_icon = $default_marker_icon_post;
+		$default_marker_shadow = $default_marker_shadow_post;
+	}else{
+		$default_marker_icon = $default_marker_icon_place;
+		$default_marker_shadow = $default_marker_shadow_place;
+	}
+	if(!empty($adhoc_marker_icon)) {
+		$this_marker_icon = $adhoc_marker_icon;
+	}else{
+		$this_marker_icon = $default_marker_icon;
+	}
+	if(!empty($adhoc_marker_shadow)) {
+		$this_marker_shadow = $adhoc_marker_shadow;
+	}else{
+		$this_marker_shadow = $default_marker_shadow;
+	}
+	// END OF MARKERS
 	
 	$default_map_height = $tppo->get_tppo('default_map_height', 'blogs');
 	if(empty($default_map_height)) {
@@ -25,12 +114,10 @@ function gpress_geoform($map_id, $map_type, $map_zoom, $map_position, $is_empty,
 		$this_height = $this_map_height;
 	}
 	
-	$gpress_post_type = $post->post_type;
-	
 	if($is_geo_settings) {
 		$gpress_post_type = 'bp_geo_settings';
 	}
-	
+
 	?>
     
     	<style>
@@ -122,29 +209,15 @@ function gpress_geoform($map_id, $map_type, $map_zoom, $map_position, $is_empty,
 			}
 			?>
 			
-			<?php if(empty($this_map_icon)) { ?>
-				var image<?php echo $map_id; ?> = new google.maps.MarkerImage(GPRESS_URL + '/gpress-core/images/markers/<?php echo $post_type; ?>.png',
-					new google.maps.Size(42, 43),
-					new google.maps.Point(0, 0),
-					new google.maps.Point(21, 21));
-			<?php } else { ?>
-				var image<?php echo $map_id; ?> = new google.maps.MarkerImage('<?php echo $this_map_icon; ?>',
-					new google.maps.Size(42, 43),
-					new google.maps.Point(0, 0),
-					new google.maps.Point(21, 21));				
-			<?php } ?>
+			var image<?php echo $map_id; ?> = new google.maps.MarkerImage('<?php echo $this_marker_icon; ?>',
+				new google.maps.Size(30, 30),
+				new google.maps.Point(0, 0),
+				new google.maps.Point(21, 22));				
 	
-			<?php if(empty($this_map_shadow)) { ?>
-			var shadow<?php echo $map_id; ?> = new google.maps.MarkerImage(GPRESS_URL + '/gpress-core/images/markers/bg.png',
-				new google.maps.Size(42, 44),
+			var shadow<?php echo $map_id; ?> = new google.maps.MarkerImage('<?php echo $this_marker_shadow; ?>',
+				new google.maps.Size(40, 40),
 				new google.maps.Point(0, 0),
-				new google.maps.Point(26, 27)); 
-			<?php } else { ?>
-			var shadow<?php echo $map_id; ?> = new google.maps.MarkerImage('<?php echo $this_map_shadow; ?>',
-				new google.maps.Size(42, 44),
-				new google.maps.Point(0, 0),
-				new google.maps.Point(26, 27)); 
-			<?php } ?>
+				new google.maps.Point(26, 27));
     
             map<?php echo $map_id; ?> = new google.maps.Map(document.getElementById('mapCanvas<?php echo $map_id; ?>'), {
                 zoom: <?php echo $map_zoom ?>,
@@ -152,10 +225,10 @@ function gpress_geoform($map_id, $map_type, $map_zoom, $map_position, $is_empty,
                 mapTypeId: google.maps.MapTypeId.<?php echo $map_type ?>
               });
             marker<?php echo $map_id; ?> = new google.maps.Marker({
-			    <?php if(!empty($this_map_icon)) { ?>
+			    <?php if(!empty($this_marker_icon)) { ?>
                     icon: image<?php echo $map_id; ?>,
 				<?php } ?>
-			    <?php if(!empty($this_map_shadow)) { ?>
+			    <?php if(!empty($this_marker_shadow)) { ?>
                     shadow: shadow<?php echo $map_id; ?>,
 				<?php } ?>
                 position: latLng,
@@ -260,7 +333,7 @@ function gpress_geoform($map_id, $map_type, $map_zoom, $map_position, $is_empty,
 		</div>
 	</div>
 	
-	<div class="gmaps_meta_boxes other_stuff<?php echo $map_id; ?> gpress_otherstuff">
+	<div class="gpress_meta_boxes other_stuff<?php echo $map_id; ?> gpress_otherstuff">
 		<div id="infoPanel<?php echo $map_id; ?>" class="gpress_infopanel">
 			<div id="leftColumn<?php echo $map_id; ?>" class="gpress_leftcolumn">
 				<b><?php echo __('Closest address:', 'gpress'); ?></b>

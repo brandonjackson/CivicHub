@@ -4,15 +4,16 @@
 Plugin Name: gPress
 Plugin URI: http://pressbuddies.com/projects/geopress/
 Description: gPress adds new geo-relevant layers to WordPress, allowing you to create your own location-based services...
-Version: 0.2.4.1
+Version: 0.2.4.3.1
 Requires at least: WordPress 3.0 / BuddyPress 1.2.5.2
-Tested up to: WordPress 3.0 / BuddyPress 1.2.5.2
+Tested up to: WordPress 3.0.1 / BuddyPress 1.2.5.2
 License: GNU/GPL 2
 Author: PressBuddies
 Author URI: http://pressbuddies.com/
 Site Wide Only: true
 */
 
+define( 'GPRESS_VERSION', '0.2.4.3.1' );
 define( 'GPRESS_DIR', WP_PLUGIN_DIR . '/gpress' );
 define( 'GPRESS_URL', plugins_url( $path = '/gpress' ) );
 
@@ -26,7 +27,7 @@ define( 'GPRESS_CS_JS_DIR', WP_PLUGIN_DIR . '/gpress/custom/custom.js' );
 define( 'GPRESS_CS_JS_URL', plugins_url( $path = '/gpress/custom/custom.js' ) );
 /* END OF CUSTOM FILE DEFINITIONS */
 		
-// First, we need to check if BuddyPress is running and run that first...
+// THIS GETS LOADED AND USED AT THE BOTTOM OF THIS PAGE
 function load_after_buddypress() {
 
 	// Secondly, we need to check WP version to ensure it only works with WP 3.0+
@@ -53,10 +54,7 @@ function load_after_buddypress() {
 		add_filter(	'post_updated_messages', 'gpress_updated_messages' );
 		add_filter( 'the_content', 'gpress_content_filter' );
 		add_filter( 'pre_get_posts', 'gpress_get_posts' );
-		
-		// ADMIN FUNCTIONS
-		include( GPRESS_DIR . '/gpress-admin/config/gpress_options.php');
-		
+
 		// CORE FUNCTIONS
 		include( GPRESS_DIR . '/gpress-core/gpress-functions.php' );
 		include( GPRESS_DIR . '/gpress-core/gpress-tinymce.php' );
@@ -71,7 +69,6 @@ function load_after_buddypress() {
 		include( GPRESS_DIR . '/gpress-core/widgets/widgets-fav-place.php' );
 		include( GPRESS_DIR . '/gpress-core/widgets/widgets-recent-places.php' );
 		include( GPRESS_DIR . '/gpress-core/widgets/widgets-foursquare.php' );
-		include( GPRESS_DIR . '/gpress-core/gpress-rss.php' );
 		
 		// SHORTCODES
 		add_shortcode( 'gpress', 'gpress_shortcode' );
@@ -79,20 +76,54 @@ function load_after_buddypress() {
 		
 		// LOAD AFTER PLUGINS
 		function gpress_init_after_plugins() {
-		
+			
 			// OPTIONS
-			global $tppo;
+			global $tppo, $tppobp, $current_user;
+		    get_currentuserinfo();
+			$user_id = $current_user->ID;
+			$user_rights = $tppo->get_tppo('user_rights', 'sitewide');
 			$remove_from_excerpt = $tppo->get_tppo('remove_from_excerpt', 'blogs');
-			$use_bp_profile = $tppo->get_tppo('use_bp_profile', 'blogs');
-			$use_bp_profile_address = $tppo->get_tppo('use_bp_profile_address', 'blogs');
+			$default_use_bp_profile = $tppo->get_tppo('default_use_bp_profile', 'sitewide');
+			$default_use_bp_profile_address = $tppo->get_tppo('default_use_bp_profile_address', 'sitewide');
+			if (defined('BP_VERSION') || did_action('bp_init')) {
+				$location_at_signup = $tppo->get_tppo('location_at_signup', 'sitewide');
+				$user_bp_profile = $tppobp->get_tppo('user_bp_profile', 'users', $user_id);
+				$user_bp_profile_address = $tppobp->get_tppo('user_bp_profile_address', 'users', $user_id);
+				if(empty($location_at_signup)) {
+					$location_at_signup = 'enabled';
+				}if($location_at_signup == 'enabled') {
+					add_filter( 'bp_signup_usermeta' , 'gpress_signup_usermeta' );
+					add_action( 'bp_before_registration_submit_buttons', 'gpress_user_signup', 1 );
+					add_action( 'wpmu_activate_user', 'gpress_activate_user', 10, 3 );
+				}
+			}
+			if(empty($user_rights)) {
+				$user_rights = 'individual';
+			}
 			if(empty($remove_from_excerpt)) {
 				$remove_from_excerpt = 'no';
 			}
-			if(empty($use_bp_profile)) {
+			if(empty($default_use_bp_profile)) {
 				$use_bp_profile = 'ABOVE';
+			}else{
+				$use_bp_profile = $default_use_bp_profile;
 			}
-			if(empty($use_bp_profile_address)) {
+			if(empty($default_use_bp_profile_address)) {
 				$use_bp_profile_address = 'enabled';
+			}else{
+				$use_bp_profile_address = $default_use_bp_profile_address;
+			}
+			if($user_rights == 'individual') {
+				if(empty($user_bp_profile)) {
+					$use_bp_profile = $default_use_bp_profile;
+				}else{
+					$use_bp_profile = $user_bp_profile;
+				}
+				if(empty($user_bp_profile_address)) {
+					$use_bp_profile_address = $default_use_bp_profile_address;
+				}else{
+					$use_bp_profile_address = $user_bp_profile_address;
+				}
 			}
 			
 			if($remove_from_excerpt == 'no') {
@@ -120,18 +151,48 @@ function load_after_buddypress() {
 
 }
 
-// This is the part that checks for BuddyPress...
+// THIS CHECKS FOR BUDDYPRESS
 global $gpress_bp;
 if (defined('BP_VERSION') || did_action('bp_init')) {
 	$gpress_bp = true;
-	include( GPRESS_DIR . '/gpress-core/gpress-bp-functions.php' );
+	include( GPRESS_DIR . '/gpress-bp/gpress-bp-functions.php' );
 	add_action( 'bp_before_member_activity_post_form', 'gpress_bp_activity' );
 	add_action( 'bp_init', 'load_after_buddypress' );
-	add_action( 'wp', 'gpress_add_new_settings_nav', 2 );
-	add_action( 'admin_menu', 'gpress_add_new_settings_nav', 2 );
 } else {
 	$gpress_bp = false;
 	load_after_buddypress();
 }
+
+// THIS LOADS CERTAIN OPTIONS AS EARLY AS POSSIBLE
+function load_admin_options() {
+	// CORE ADMIN FUNCTIONS
+	include( GPRESS_DIR . '/gpress-admin/config/gpress_options.php');
+	// ONLY IF BUDDYPRESS IS ACTIVE
+	if (defined('BP_VERSION') || did_action('bp_init')) {
+		/* CHECK TO SEE IF GEO-SETTINGS IS NEEDED */
+		global $tppo;
+		$user_rights = $tppo->get_tppo('user_rights', 'sitewide');
+		$default_use_bp_profile = $tppo->get_tppo('default_use_bp_profile', 'sitewide');
+		if(empty($user_rights)) {
+			$user_rights = 'individual';
+		}
+		if(empty($default_use_bp_profile)) {
+			$default_use_bp_profile = 'ABOVE';
+		}
+		if($user_rights == 'individual') {
+			add_action( 'wp', 'gpress_add_new_settings_nav', 2 );
+			add_action( 'admin_menu', 'gpress_add_new_settings_nav', 2 );
+		}else{
+			if($default_use_bp_profile != 'NONE') {
+				add_action( 'wp', 'gpress_add_new_settings_nav', 2 );
+				add_action( 'admin_menu', 'gpress_add_new_settings_nav', 2 );
+			}
+		}
+		include( GPRESS_DIR . '/gpress-bp/user-admin/gpress_bp_options.php');
+	}
+	// LOADED REGARDLESS OF BUDDYPRESS AT STAGE OF SETTING CURRENT USER
+	include( GPRESS_DIR . '/gpress-core/gpress-rss.php' );
+}
+add_action( 'set_current_user', 'load_admin_options' );
 
 ?>

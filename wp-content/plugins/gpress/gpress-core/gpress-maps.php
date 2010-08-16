@@ -32,39 +32,87 @@ function gpress_add_map($gpress_map_settings) {
 	$map_settings = array_merge($map_settings_default,$gpress_map_settings);
 	extract($map_settings);
 	
-	// gPress Options
+	// gPress Map Options
 	$default_map_height = $tppo->get_tppo('default_map_height', 'blogs');
 	$default_map_type = $tppo->get_tppo('default_map_type', 'blogs');
 	$default_map_zoom = $tppo->get_tppo('default_map_zoom', 'blogs');
+	
+	// gPress Post Markers
 	$marker_posts_icon = $tppo->get_tppo('marker_posts_icon', 'blogs');
 	$marker_posts_shadow = $tppo->get_tppo('marker_posts_shadow', 'blogs');
+	$marker_posts_icon_file = $marker_posts_icon['filename'];
+	$marker_posts_icon_url = $marker_posts_icon['fileurl'];
+	$marker_posts_shadow_file = $marker_posts_shadow['filename'];
+	$marker_posts_shadow_url = $marker_posts_shadow['fileurl'];
+	if(!empty($marker_posts_icon_url)) {
+		$default_marker_icon_post = $marker_posts_icon_url;
+	}else{
+		if(!empty($marker_posts_icon_file)) {
+			$default_marker_icon_post = GPRESS_URL.'/gpress-admin/fieldtypes/image_upload/uploads/'.$marker_posts_icon_file;
+		} else {
+			$default_marker_icon_post = GPRESS_URL.'/gpress-core/images/markers/post.png';
+		}
+	}
+	if(!empty($marker_posts_shadow_url)) {
+		$default_marker_shadow_post = $marker_posts_shadow_url;
+	}else{
+		if(!empty($marker_posts_shadow_file)) {
+			$default_marker_shadow_post = GPRESS_URL.'/gpress-admin/fieldtypes/image_upload/uploads/'.$marker_posts_shadow_file;
+		} else {
+			$default_marker_shadow_post = GPRESS_URL.'/gpress-core/images/markers/bg.png';
+		}
+	}
+	
+	// gPress Place Markers
 	$marker_places_icon = $tppo->get_tppo('marker_places_icon', 'blogs');
 	$marker_places_shadow = $tppo->get_tppo('marker_places_shadow', 'blogs');
+	$marker_places_icon_file = $marker_places_icon['filename'];
+	$marker_places_icon_url = $marker_places_icon['fileurl'];
+	$marker_places_shadow_file = $marker_places_shadow['filename'];
+	$marker_places_shadow_url = $marker_places_shadow['fileurl'];
+	if(!empty($marker_places_icon_url)) {
+		$default_marker_icon_place = $marker_places_icon_url;
+	}else{
+		if(!empty($marker_places_icon_file)) {
+			$default_marker_icon_place = GPRESS_URL.'/gpress-admin/fieldtypes/image_upload/uploads/'.$marker_places_icon_file;
+		} else {
+			$default_marker_icon_place = GPRESS_URL.'/gpress-core/images/markers/place.png';
+		}
+	}
+	if(!empty($marker_places_shadow_url)) {
+		$default_marker_shadow_place = $marker_places_shadow_url;
+	}else{
+		if(!empty($marker_places_shadow_file)) {
+			$default_marker_shadow_place = GPRESS_URL.'/gpress-admin/fieldtypes/image_upload/uploads/'.$marker_places_shadow_file;
+		} else {
+			$default_marker_shadow_place = GPRESS_URL.'/gpress-core/images/markers/bg.png';
+		}
+	}
+	
+	// gPress Favorite Place Widget Markers
 	$marker_favwidget_icon = $tppo->get_tppo('marker_favwidget_icon', 'blogs');
 	$marker_favwidget_shadow = $tppo->get_tppo('marker_favwidget_shadow', 'blogs');
-	
-	if(empty($marker_posts_icon)) {
-		$default_marker_icon_post = ''.GPRESS_URL.'/gpress-core/images/markers/post.png';
-	} else {
-		$default_marker_icon_post = $marker_posts_icon;
+	$marker_favwidget_icon_file = $marker_favwidget_icon['filename'];
+	$marker_favwidget_icon_url = $marker_favwidget_icon['fileurl'];
+	$marker_favwidget_shadow_file = $marker_favwidget_shadow['filename'];
+	$marker_favwidget_shadow_url = $marker_favwidget_shadow['fileurl'];
+	if(!empty($marker_favwidget_icon_url)) {
+		$default_marker_icon_favwidget = $marker_favwidget_icon_url;
+	}else{
+		if(!empty($marker_favwidget_icon_file)) {
+			$default_marker_icon_favwidget = GPRESS_URL.'/gpress-admin/fieldtypes/image_upload/uploads/'.$marker_favwidget_icon_file;
+		} else {
+			$default_marker_icon_favwidget = GPRESS_URL.'/gpress-core/images/markers/widget.png';
+		}
 	}
-	
-	if(empty($marker_places_icon)) {
-		$default_marker_icon_place = ''.GPRESS_URL.'/gpress-core/images/markers/place.png';
-	} else {
-		$default_marker_icon_place = $marker_places_icon;
-	}
-	
-	if(empty($marker_posts_shadow)) {
-		$default_marker_shadow_post = ''.GPRESS_URL.'/gpress-core/images/markers/bg.png';
-	} else {
-		$default_marker_shadow_post = $marker_posts_shadow;
-	}
-	
-	if(empty($marker_places_shadow)) {
-		$default_marker_shadow_place = ''.GPRESS_URL.'/gpress-core/images/markers/bg.png';
-	} else {
-		$default_marker_shadow_place = $marker_places_shadow;
+	if(!empty($marker_favwidget_shadow_url)) {
+		$default_marker_shadow_favwidget = $marker_favwidget_shadow_url;
+	}else{
+		if(!empty($marker_favwidget_shadow_file)) {
+			$default_marker_shadow_favwidget = GPRESS_URL.'/gpress-admin/fieldtypes/image_upload/uploads/'.$marker_favwidget_shadow_file;
+		} else {
+			$default_marker_shadow_favwidget = GPRESS_URL.'/gpress-core/images/markers/bg.png';
+		}
 	}
 	
 	// POSTS
@@ -86,26 +134,8 @@ function gpress_add_map($gpress_map_settings) {
 			$map_type = $meta['type'];
 			$map_zoom = $meta['zoom'];
 			
-			$this_map_icon = $meta['icon'];
-			$this_map_shadow = $meta['shadow'];
-			$default_marker_icon = $marker_posts_icon;
-			$default_marker_shadow = $marker_posts_shadow;
-			if(empty($this_map_icon)) {
-				if(empty($default_marker_icon)) {
-					$default_marker_icon = $default_marker_icon_post;
-				}
-				$this_map_icon = $default_marker_icon;
-			}
-			if(empty($this_map_shadow)) {
-				if(empty($default_marker_shadow)) {
-					$default_marker_shadow = $default_marker_shadow_post;
-				}
-				$this_map_shadow = $default_marker_shadow;
-			}
-			
 			$marker_url = get_permalink();
 			
-			$marker_array = array();
 			$metalatlng = $meta['latlng'];
 			$metaaddress = $meta['address'];
 			$geopublic = get_post_meta($post_id,'geo_public',TRUE);
@@ -122,6 +152,18 @@ function gpress_add_map($gpress_map_settings) {
 					$metaaddress = $metalatlng;
 				}
 			}
+			
+			$marker_array = array();
+			
+			// Add Markers		
+			$marker_array[$post_id]['icon_url'] = $meta['icon_url'];
+			$marker_array[$post_id]['icon_file'] = $meta['icon_file'];
+			$marker_array[$post_id]['shadow_url'] = $meta['shadow_url']; 
+			$marker_array[$post_id]['shadow_file'] = $meta['shadow_file']; 
+			$marker_array[$post_id]['default_icon'] = $default_marker_icon_post;
+			$marker_array[$post_id]['default_shadow'] = $default_marker_shadow_post;
+			// End of Markers
+			
 			$marker_array[$post_id]['latlng'] = $metalatlng;
 			$marker_array[$post_id]['id'] = $post_id;
 			$marker_array[$post_id]['title'] = $marker_title;
@@ -143,26 +185,19 @@ function gpress_add_map($gpress_map_settings) {
 			$meta = get_post_meta($place_id,'_gpress_places',TRUE);
 			$this_map_height = $meta['height'];
 			
-			$this_map_icon = $meta['icon'];
-			$this_map_shadow = $meta['shadow'];
-			$default_marker_icon = $marker_places_icon;
-			$default_marker_shadow = $marker_places_shadow;
-			if(empty($this_map_icon)) {
-				if(empty($default_marker_icon)) {
-					$default_marker_icon = $default_marker_icon_place;
-				}
-				$this_map_icon = $default_marker_icon;
-			}
-			if(empty($this_map_shadow)) {
-				if(empty($default_marker_shadow)) {
-					$default_marker_shadow = $default_marker_shadow_place;
-				}
-				$this_map_shadow = $default_marker_shadow;
-			}
-			
 			$marker_url = get_bloginfo('url').'/?post_type='.$places_taxonomy.'&p='.$place_id.'';
 			
 			$marker_array = array();
+			
+			// Add Markers		
+			$marker_array[$place_id]['icon_url'] = $meta['icon_url'];
+			$marker_array[$place_id]['icon_file'] = $meta['icon_file'];
+			$marker_array[$place_id]['shadow_url'] = $meta['shadow_url']; 
+			$marker_array[$place_id]['shadow_file'] = $meta['shadow_file']; 
+			$marker_array[$place_id]['default_icon'] = $default_marker_icon_place;
+			$marker_array[$place_id]['default_shadow'] = $default_marker_shadow_place;
+			// End of Markers
+			
 			$marker_array[$place_id]['latlng'] = $meta['latlng'];
 			$marker_array[$place_id]['id'] = $place_id;
 			$marker_array[$place_id]['title'] = $marker_title;
@@ -195,11 +230,7 @@ function gpress_add_map($gpress_map_settings) {
 			
 			$marker_title = $gpress_this_place_title;
 			$this_map_height = $map_height;
-			$this_map_icon = $marker_icon;
-			$this_map_shadow = $marker_shadow;
 			$default_map_height = '250';
-			$default_marker_icon = $marker_favwidget_icon;
-			$default_marker_shadow = $marker_favwidget_shadow;
 		
 			$marker_array = array();
 			$marker_array[$place_id]['latlng'] = $meta['latlng'];
@@ -207,6 +238,8 @@ function gpress_add_map($gpress_map_settings) {
 			$marker_array[$place_id]['title'] = $gpress_this_place_title;
 			$marker_array[$place_id]['url'] = $marker_url;
 			$marker_array[$place_id]['address'] = $meta['address'];
+			$marker_array[$place_id]['default_icon'] = $default_marker_icon_favwidget;
+			$marker_array[$place_id]['default_shadow'] = $default_marker_shadow_favwidget;
 		}
 
 	}
@@ -224,6 +257,13 @@ function gpress_add_map($gpress_map_settings) {
 		$marker_array[$place_id]['description'] = $marker_description;
 		$marker_array[$place_id]['title'] = $marker_title;
 		$marker_array[$place_id]['url'] = $marker_url;
+		
+		// Add Markers		
+		$marker_array[$place_id]['icon_url'] = $marker_icon;
+		$marker_array[$place_id]['shadow_url'] = $marker_shadow; 
+		$marker_array[$place_id]['default_icon'] = $default_marker_icon_place;
+		$marker_array[$place_id]['default_shadow'] = $default_marker_shadow_place;
+		// End of Markers
 
 	}
 	
@@ -266,6 +306,7 @@ function gpress_add_map($gpress_map_settings) {
 		
 		$this_map_height = $map_height;
 		$marker_array = $place_id;
+		//print_r($marker_array); exit;
 		
 	}
 	
@@ -349,22 +390,22 @@ function gpress_add_map($gpress_map_settings) {
 			
 	  		var styles = [[{
 			  url: GPRESS_URL + '/gpress-core/images/markers/bg.png',
-			  height: 42,
-			  width: 42,
+			  height: 40,
+			  width: 40,
 			  opt_anchor: [16, 0],
 			  opt_textColor: '#FFFFFF',
 			  opt_textSize: 18
 			}, {
 			  url: GPRESS_URL + '/gpress-core/images/markers/bg.png',
-			  height: 42,
-			  width: 42,
+			  height: 40,
+			  width: 40,
 			  opt_anchor: [16, 0],
 			  opt_textColor: '#FFFFFF',
 			  opt_textSize: 18
 			}, {
 			  url: GPRESS_URL + '/gpress-core/images/markers/bg.png',
-			  height: 42,
-			  width: 42,
+			  height: 40,
+			  width: 40,
 			  opt_anchor: [16, 0],
 			  opt_textColor: '#FFFFFF',
 			  opt_textSize: 18
@@ -401,11 +442,13 @@ function gpress_add_map($gpress_map_settings) {
 	            foreach($marker_array as $id => $marker) {
 				
 					if($map_id == '_bp_profile') {
-						$id = $marker['post_id'];	
+						$blog_id = $marker['blog_id'];
+						$post_id = $marker['post_id'];
+						$id = $blog_id.'_'.$post_id;
 						$marker_title = $marker['post_title'];
-						$map_position = $marker['geo_latlng'];
+						$marker_title = trim_me($marker_title, 140, '[...]');
 						$place_address = $marker['geo_latlng'];	
-						$this_map_icon = $default_marker_icon_post;
+						$place_address = trim_me($place_address, 140, '[...]');
 						$pos = $marker['geo_latlng'];
 						$thumb_array = wp_get_attachment_image_src(get_post_thumbnail_id( $id ), 'post-thumbnail' );
 						$thumb_src = $thumb_array[0];
@@ -419,7 +462,6 @@ function gpress_add_map($gpress_map_settings) {
 						$thumb_src = $marker['photo'];
 						$original_description = $marker['shout'];
 						$this_description = trim_me($original_description, 140, '[...]');
-						$this_map_icon = ''. GPRESS_URL .'/gpress-core/images/markers/4sq.png';
 						$left_width = '45px';
 						$right_width = '';
 						$marker_url = $marker['venue_url'];
@@ -431,7 +473,9 @@ function gpress_add_map($gpress_map_settings) {
 						$pos = $marker['latlng'];
 						$four_type = $marker['four_type'];
 						$place_address = $marker['address'];
+						$place_address = trim_me($place_address, 140, '[...]');
 						$person_name = $marker['name'];
+						$person_name = trim_me($person_name, 140, '[...]');
 						$place_hidden = $marker['hidden'];
 						$marker_title = $marker['title'];
 						$marker_title = trim_me($marker_title, 140, '[...]');
@@ -440,7 +484,6 @@ function gpress_add_map($gpress_map_settings) {
 						$thumb_src = $marker['photo'];
 						$original_description = $marker['shout'];
 						$this_description = trim_me($original_description, 140, '[...]');
-						$this_map_icon = ''. GPRESS_URL .'/gpress-core/images/markers/4sq.png';
 						$left_width = '45px';
 						$right_width = '';
 						$marker_url = $marker['venue_url'];
@@ -452,13 +495,14 @@ function gpress_add_map($gpress_map_settings) {
 						$pos = $marker['latlng'];
 						$four_type = $marker['four_type'];
 						$place_address = $marker['address'];
+						$place_address = trim_me($place_address, 140, '[...]');
 						$person_name = $marker['name'];
+						$person_name = trim_me($person_name, 140, '[...]');
 						$place_hidden = $marker['hidden'];
 						$marker_title = $marker['title'];
 						$marker_title = trim_me($marker_title, 140, '[...]');
 					}elseif($map_id == '_bp_user_location') {
 						$id = $marker['user_id'];
-						$this_map_icon = ''. GPRESS_URL .'/gpress-core/images/markers/user.png';
 						$pos = $marker['latlng'];
 						$map_position = $marker['latlng'];
 						$place_address = $marker['address'];
@@ -467,8 +511,11 @@ function gpress_add_map($gpress_map_settings) {
 					}else{
 						$id = $marker['id'];
 						$marker_title = $marker['title'];
+						$marker_title = trim_me($marker_title, 140, '[...]');
 						$place_address = $marker['address'];
+						$place_address = trim_me($place_address, 140, '[...]');
 						$person_name = $marker['name'];
+						$person_name = trim_me($person_name, 140, '[...]');
 						$pos = $marker['latlng'];
 						$thumb_array = wp_get_attachment_image_src(get_post_thumbnail_id( $id ), 'post-thumbnail' );
 						$thumb_src = $thumb_array[0];
@@ -481,6 +528,47 @@ function gpress_add_map($gpress_map_settings) {
 						$photo_url = $marker_url;
 						$place_hidden = 'no';
 					}
+					
+					// SORT MARKERS
+					$adhoc_marker_icon_url = $marker['icon_url'];
+					$adhoc_marker_icon_file = $marker['icon_file'];
+					$adhoc_marker_shadow_url = $marker['shadow_url'];
+					$adhoc_marker_shadow_file = $marker['shadow_file'];
+					$default_marker_icon = $marker['default_icon'];
+					$default_marker_shadow = $marker['default_shadow'];
+					if(!empty($adhoc_marker_icon_url)) {
+						$adhoc_marker_icon = $adhoc_marker_icon_url;
+					}else{
+						if(!empty($adhoc_marker_icon_file)) {
+							$adhoc_marker_icon = GPRESS_URL.'/gpress-admin/fieldtypes/image_upload/uploads/'.$adhoc_marker_icon_file;
+						}else{
+							$adhoc_marker_icon = $default_marker_icon;
+						}
+					}
+					if(!empty($adhoc_marker_shadow_url)) {
+						$adhoc_marker_shadow = $adhoc_marker_shadow_url;
+					}else{
+						if(!empty($adhoc_marker_shadow_file)) {
+							$adhoc_marker_shadow = GPRESS_URL.'/gpress-admin/fieldtypes/image_upload/uploads/'.$adhoc_marker_shadow_file;
+						}else{
+							$adhoc_marker_shadow = $default_marker_shadow;
+						}
+					}
+					if(!empty($adhoc_marker_icon)) {
+						$this_marker_icon = $adhoc_marker_icon;
+					}else{
+						$this_marker_icon = $default_marker_icon;
+					}
+					if(!empty($adhoc_marker_shadow)) {
+						$this_marker_shadow = $adhoc_marker_shadow;
+					}else{
+						$this_marker_shadow = $default_marker_shadow;
+					}
+					if(($map_id == '_foursquare') || ($map_id == '_foursquare_widget')) {
+						$this_marker_icon = $marker['icon'];
+						$this_marker_shadow = $marker['shadow'];
+					}
+					// END OF MARKER SORT
 					
 					if($map_id !== '_foursquare') {
 						$places_list = get_the_term_list( $id, $places_taxonomy_plural, $places_types, ', ', '' ); 
@@ -612,8 +700,8 @@ function gpress_add_map($gpress_map_settings) {
 						  google.maps.OverlayView.call(this);
 						  this.latlng_ = opts.latlng;
 						  this.map_ = opts.map;
-						  this.offsetVertical_ = -23;
-						  this.offsetHorizontal_ = -22;
+						  this.offsetVertical_ = -29;
+						  this.offsetHorizontal_ = -28;
 						  this.maxHeight_ = (canvas_height<?php echo $gpid; ?> - 90);
 						  this.width_ = (canvas_width<?php echo $gpid; ?> - 200);
 						
@@ -674,15 +762,7 @@ function gpress_add_map($gpress_map_settings) {
 							var topDiv = document.createElement('div');
 							topDiv.style.textAlign = 'right';
 							
-							<?php if(empty($this_map_icon)) { ?>
-								<?php if(empty($default_marker_icon)) { ?>
-									topDiv.style.background = '#C22B99 url("' + GPRESS_URL + '/gpress-core/images/markers/<?php echo $post_type; ?>.png") no-repeat 5px 5px';
-								<?php } else { ?>
-									topDiv.style.background = '#C22B99 url("<?php echo $default_marker_icon; ?>") no-repeat 5px 5px';
-								<?php } ?>
-							<?php } else { ?>
-								topDiv.style.background = '#C22B99 url("<?php echo $this_map_icon; ?>") no-repeat 5px 5px';
-							<?php } ?>
+							topDiv.style.background = '#C22B99 url("<?php echo $this_marker_icon; ?>") no-repeat 5px 5px';
 							
 							topDiv.style.padding = '5px';
 							
@@ -761,45 +841,16 @@ function gpress_add_map($gpress_map_settings) {
 							google.maps.event.removeListener(this.boundsChangedListener_);
 							this.boundsChangedListener_ = null;
 						};
-						
-						<?php 
-						if(empty($this_map_icon)) { ?>
-							<?php if(empty($default_marker_icon)) { ?>
-								var image<?php echo $gpid; ?> = new google.maps.MarkerImage(GPRESS_URL + '/gpress-core/images/markers/<?php echo $post_type; ?>.png',
-									new google.maps.Size(32, 33),
-									new google.maps.Point(0, 0),
-									new google.maps.Point(15, 16));
-							<?php } else { ?>
-								var image<?php echo $gpid; ?> = new google.maps.MarkerImage('<?php echo $default_marker_icon; ?>',
-									new google.maps.Size(32, 33),
-									new google.maps.Point(0, 0),
-									new google.maps.Point(15, 16));
-							<?php } ?>
-						<?php } else { ?>
-							var image<?php echo $gpid; ?> = new google.maps.MarkerImage('<?php echo $this_map_icon; ?>',
-								new google.maps.Size(32, 33),
-								new google.maps.Point(0, 0),
-								new google.maps.Point(15, 16));
-						<?php } ?>
-				
-						<?php if(empty($this_map_shadow)) { ?>
-							<?php if(empty($default_marker_shadow)) { ?>
-								var shadow<?php echo $gpid; ?> = new google.maps.MarkerImage(GPRESS_URL + '/gpress-core/images/markers/bg.png',
-									new google.maps.Size(42, 44),
-									new google.maps.Point(0, 0),
-									new google.maps.Point(20, 22)); 
-							<?php } else { ?>
-								var shadow<?php echo $gpid; ?> = new google.maps.MarkerImage('<?php echo $default_marker_shadow; ?>',
-									new google.maps.Size(42, 44),
-									new google.maps.Point(0, 0),
-									new google.maps.Point(20, 22)); 
-							<?php } ?>
-						<?php } else { ?>
-							var shadow<?php echo $gpid; ?> = new google.maps.MarkerImage('<?php echo $this_map_shadow; ?>',
-								new google.maps.Size(42, 44),
-								new google.maps.Point(0, 0),
-								new google.maps.Point(20, 22)); 
-						<?php } ?>
+
+						var image<?php echo $id; ?> = new google.maps.MarkerImage('<?php echo $this_marker_icon; ?>',
+							new google.maps.Size(30, 30),
+							new google.maps.Point(0, 0),
+							new google.maps.Point(21, 22));
+
+						var shadow<?php echo $id; ?> = new google.maps.MarkerImage('<?php echo $this_marker_shadow; ?>',
+							new google.maps.Size(40, 40),
+							new google.maps.Point(0, 0),
+							new google.maps.Point(26, 27)); 
 						
 						var latLng<?php echo $id; ?> = new google.maps.LatLng(<?php echo $pos; ?>);
 				
@@ -807,8 +858,8 @@ function gpress_add_map($gpress_map_settings) {
 							position: latLng<?php echo $id; ?>,
 							title: '<?php echo $title; ?>',
 							map: map<?php echo $gpid; ?>,
-							icon: image<?php echo $gpid; ?>,
-							shadow: shadow<?php echo $gpid; ?>,
+							icon: image<?php echo $id; ?>,
+							shadow: shadow<?php echo $id; ?>,
 							draggable: false
 						});
 						
