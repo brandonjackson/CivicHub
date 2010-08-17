@@ -28,9 +28,23 @@ register_post_type('idea', array(
 	'supports' => array('title','editor','author','custom-fields', 'comments') // What can this post type do
 ));
 
+register_post_type('project', array(
+	'label' => __('Projects'),
+	'singular_label' => __('Project'),
+	'public' => true, // Allows it to be publicly queryable
+	'show_ui' => true, // Displays the post time in the Admin Interface
+	'_builtin' => false,
+	'_edit_link' => 'post.php?post=%d',
+	'capability_type' => 'post',
+	'taxonomies'=>array('topic', 'skill'),
+	'hierarchical' => true,
+	'rewrite' => array("slug" => "projects", 'with_front'=>FALSE), // the slug for permalinks
+	'supports' => array('title','editor','author','custom-fields', 'comments') // What can this post type do
+));
+
 register_taxonomy(
 		'topic', // internal name = machine-readable taxonomy name
-		'idea', // object type = post, page, link, or custom post-type
+		array('idea','project'), // object type = post, page, link, or custom post-type
 		array(
 			'hierarchical' => true,
 			'label' => 'Topic',	// the human-readable taxonomy name
@@ -38,6 +52,18 @@ register_taxonomy(
 			'rewrite' => array( 'slug' => 'ideas/topics' ),	// pretty permalinks for your taxonomy?
 		)
 );
+
+register_taxonomy(
+		'skill', // internal name = machine-readable taxonomy name
+		array('project'), // object type = post, page, link, or custom post-type
+		array(
+			'hierarchical' => true,
+			'label' => 'Skill',	// the human-readable taxonomy name
+			'query_var' => true,	// enable taxonomy-specific querying
+			'rewrite' => array( 'slug' => 'projects/skills' ),	// pretty permalinks for your taxonomy?
+		)
+);
+
 
 register_sidebars( 1,
 	array(

@@ -14,16 +14,14 @@ Template Name: Ideas Archive Page
 		<div class="page" id="blog-archives">
 
 			<h3 class="pagetitle"><?php printf( __( '%1$s', 'buddypress' ), wp_title( false, false ) ); ?></h3>
+			<p>Welcome to CivicHaven. Here you can contribute your ideas for the future of our city. You can also vote on existing ideas submitted by your fellow citizens.
+			To get started, simply choose a category from the list on the right. You can browse other ideas or submit your own for others to discuss or vote on.</p>
+</p>
+			<p><a href='<?php bloginfo('url'); ?>/submit-new-idea'>Submit Your Own Idea</a></p>
 
 			<?php query_posts('post_type=idea'); 
 			  		if ( have_posts() ) : ?>
 
-				<div class="navigation">
-
-					<div class="alignleft"><?php next_posts_link( __( '&larr; Previous Entries', 'buddypress' ) ) ?></div>
-					<div class="alignright"><?php previous_posts_link( __( 'Next Entries &rarr;', 'buddypress' ) ) ?></div>
-
-				</div>
 
 				<?php while (have_posts()) : the_post(); ?>
 

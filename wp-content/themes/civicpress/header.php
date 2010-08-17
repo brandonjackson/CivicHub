@@ -41,7 +41,7 @@
 		<div id="header_wrapper">
 		<div id="header">
 			<a id="logo" href="<?php echo site_url() ?>" title="<?php _e( 'Home', 'buddypress' ) ?>">
-			<img src="<?php echo site_url(); ?>/wp-content/themes/civicpress/assets/images/civichaven.png" />
+			<img src="<?php echo site_url(); ?>/wp-content/themes/civicpress/assets/images/logo.png" />
 			</a>
 			<!--
 			<h1 id="logo">

@@ -15,7 +15,7 @@ global $current_user;
 		<div class="page" id="blog-single">
 
 			<h2>Share Your Idea</h2>
-			<form method='post' name='new_idea' action='<?php bloginfo('stylesheet_directory');?>/inc/process-new-idea.php'>
+			<form method='post' name='submit_idea' action='<?php bloginfo('stylesheet_directory');?>/inc/process-new-idea.php' class='new_submission'>
 			<p>
 				<label>Summary</label>
 				<input type='text' name='summary' value='' />
