@@ -2,6 +2,7 @@
 /**
 *	CivicPress functions file
 */
+define ( 'BP_DISABLE_ADMIN_BAR', true );
 
 /* Add custom menu support*/
 if (function_exists('add_theme_support')) {
@@ -48,6 +49,11 @@ register_sidebars( 1,
 		'after_title' => '</h3>'
 	)
 );
+add_action('muplugins_loaded','buddypress_config');
+function buddypress_config()
+{
+	
+}
 
 
 ?>

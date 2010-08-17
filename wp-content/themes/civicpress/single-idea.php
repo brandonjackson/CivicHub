@@ -30,10 +30,18 @@
 						</div>
 
 						<p class="date">
-							<?php the_date() ?> 
-							<em>
-								<?php printf( __( 'by %s', 'buddypress' ), bp_core_get_userlink( $post->post_author ) ) ?></em> | <span class="comments"><?php comments_popup_link( __( 'No Comments', 'buddypress' ), __( '1 Comment', 'buddypress' ), __( '% Comments', 'buddypress' ) ); ?></span>
-						</p>
+								<?php the_date() ?>
+								<?php _e( 'in', 'buddypress' ) ?> 
+								<?php the_terms(get_the_id(), 'topic');?> 
+								<?php printf( __( 'by %s', 'buddypress' ), bp_core_get_userlink( $post->post_author ) ) ?>&nbsp;|&nbsp; 
+								<span class="tags">
+									<?php the_tags( __( 'Tags: ', 'buddypress' ), ', ', '<br />'); ?>
+								</span> 
+								<span class="comments">
+								<img src='<?php bloginfo('stylesheet_directory'); ?>/assets/images/comment_icon.gif' id='commenticon' />
+									<?php comments_popup_link( __( 'No Comments &#187;', 'buddypress' ), __( '1 Comment &#187;', 'buddypress' ), __( '% Comments &#187;', 'buddypress' ) ); ?>
+								</span>
+							</p>	
 
 
 						
